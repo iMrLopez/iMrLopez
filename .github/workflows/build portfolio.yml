@@ -3,7 +3,7 @@ name: build portfolio
 on:
   push:
     branches:
-      - 'master'
+      - 'portfolio'
 
 jobs:
   build:
