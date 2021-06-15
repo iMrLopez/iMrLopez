@@ -1,0 +1,34 @@
+<section id="portfolio_sec" class="portfolio-sec sec-pad-top-sm">
+  <div class="mb-15">
+    <h2 class="pull-left float-none-xs">portfolio</h2>
+    <div class="filter-wrap pull-right float-none-xs">
+      <!-- Portfolio Filters -->
+      <ul id="filters">
+        <li>
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" (click)="toggleFilter({'description':'all'})">All</button>
+      </li>
+        <li *ngFor="let category of categories">
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" (click)="toggleFilter(category)">{{category.description}}</button>
+        </li>
+      </ul>
+      <!--/Portfolio Filters -->
+      <div class="clearfix"></div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+  <div class="gallery-wrap mb-30">
+    <div class="portfolio-wrap project-gallery" style="width: 940px;">
+      <ul id="portfolio" class="portf auto-construct  project-gallery" data-col="3">
+        <ng-container *ngFor="let project of projects">
+          <li class="item mdl-card mdl-shadow--2dp pa-0 branding" style="max-width: 200px; height: auto; margin: 10px; display: inline-block;" *ngIf="shouldDisplayProject(project)">
+            <div class="light-img-wrap mdl-card__title pa-0">
+              <img class="img-responsive" [src]="project.images[0]" alt="{{project.name}} Image">
+              <div class="light-img-overlay"></div>
+              <span class="img-cap">{{project.name}}</span>
+            </div>
+          </li>
+        </ng-container>
+      </ul>
+    </div>
+  </div>
+</section>
