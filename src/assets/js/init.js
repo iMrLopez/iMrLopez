@@ -157,31 +157,7 @@ var matResume = function () {
 			}
 		}
 	});
-	
-	/*Client carousel*/
-	$('#client_sec .client-carousel').owlCarousel({
-		loop:true,
-		margin:15,
-		nav:false,
-		dots:false,
-		responsive:{
-			0:{
-				items:1
-			},
-			200:{
-				items:2
-			},
-			400:{
-				items:3
-			},
-			600:{
-				items:4
-			},
-			1300:{
-				items:5
-			}
-		}
-	});
+
 };
 /***** Matresume function end *****/
 
