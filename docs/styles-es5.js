@@ -557,10 +557,10 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/marny.lopez/DevEnv/myndsit/MyResume/src/styles.css */"./src/styles.css");
+module.exports = __webpack_require__(/*! /Users/marny.lopez/DevEnv/myndsit/iMrLopez/src/styles.css */"./src/styles.css");
 
 
 /***/ })
 
 },[[2,"runtime"]]]);
-//# sourceMappingURL=styles-es2015.js.map
+//# sourceMappingURL=styles-es5.js.map
