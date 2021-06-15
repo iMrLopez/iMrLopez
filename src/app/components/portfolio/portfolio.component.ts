@@ -9,6 +9,7 @@ import { Project, ProjectCategory } from 'src/app/models/project';
 })
 export class PortfolioComponent implements OnInit {
   public projects: Array<Project>;
+  public selectedProject: Project;
   public categories: Array<ProjectCategory>;
   public appliedFilters: Array<ProjectCategory> = new Array<ProjectCategory>();
 
@@ -32,7 +33,6 @@ export class PortfolioComponent implements OnInit {
     } else {
       this.appliedFilters.push($e);
     }
-    console.log(this.appliedFilters, $e)
   }
 
   shouldDisplayProject(proj: Project){
@@ -42,7 +42,14 @@ export class PortfolioComponent implements OnInit {
     
     const found = this.appliedFilters.findIndex((el) => el.description == proj.type.description);
     return (found > -1);
+  }
 
+  shouldPaintFilter(pFil: ProjectCategory){
+    if (pFil.description === 'all' && this.appliedFilters.length == 0) {
+      return true;
+    }
+    const found = this.appliedFilters.findIndex((el) => el.description == pFil.description);
+    return (found > -1);
   }
 
 }
