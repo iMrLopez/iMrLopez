@@ -20,5 +20,60 @@
             "https://scontent-dfw5-2.xx.fbcdn.net/v/t1.6435-0/p552x414/116363670_746808229491418_8538163890286823832_n.png?_nc_cat=100&ccb=1-3&_nc_sid=730e14&_nc_ohc=IygDrdRbvzcAX8X7DXS&_nc_ht=scontent-dfw5-2.xx&tp=30&oh=0094680e712ed35f417cacb497ead486&oe=60CEB3BD"
         ],
         "url":"https://esemenu.com"
+    },
+    {
+        "name": "MascoTiks",
+        "description":"MascoTiks is a mobile & web application for pet registering and tracking, its main objective is to provide a tool for users to keep track of their pets.",
+        "type": {
+            "description":"Web"
+        },
+        "images":[
+            "https://scontent.fsjo13-1.fna.fbcdn.net/v/t1.6435-9/89153124_100732528228812_2174267729777786880_n.png?_nc_cat=104&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=DXQ7TtnVV3UAX-cMeHT&_nc_oc=AQkF002NF8wteaEWYkxZfM8N3CdvYKJptpeZfVSmrAbBQEDT2rFTTaL3-0b_KIknKMU&_nc_ht=scontent.fsjo13-1.fna&oh=6901bff3ba5e3a677b21f74f6ebf0ff4&oe=60CE2936"
+        ],
+        "url":"https://mascotikscr.com"
+    },
+    {
+        "name": "Colegio Tecnico Jesus Ocana Rojas",
+        "description":"Website design for a stable web presence",
+        "type": {
+            "description":"Web"
+        },
+        "images":[
+            "https://vocaalajuela.files.wordpress.com/2013/10/img.png?w=300&h=228"
+        ],
+        "url":"http://ctpjor.ed.cr/"
+    },
+    {
+        "name": "MobiFactura",
+        "description":"Mobile + Angular + NodeJs application for creation of invoices in the Costa Rican legislation",
+        "type": {
+            "description":"Mobile"
+        },
+        "images":[
+            "https://mobifactura.web.app/assets/img/brand/brain.png"
+        ],
+        "url":"https://mobifactura.web.app"
+    },
+    {
+        "name": "China TV",
+        "description":"Mobile application for streaming of Chinese tv channels in Android",
+        "type": {
+            "description":"Mobile"
+        },
+        "images":[
+            "https://play-lh.googleusercontent.com/LcRST7eevMd1tzqzT0fW4s9TuxhwQWJoZuB9VAACg_N7bdo0sNRq9Rpw4EVXjEW8OOo=s180-rw"
+        ],
+        "url":"https://play.google.com/store/apps/details?id=com.mlopezitsolutions.chinatv"
+    },
+    {
+        "name": "SCRUM Guide Handbook",
+        "description":"A Handbook for scrum, just that.",
+        "type": {
+            "description":"Mobile"
+        },
+        "images":[
+            "https://play-lh.googleusercontent.com/wLQBlUHn-dgw32RFZvDMfUKt2B0t2VI_5FpxNSSV4aQp5zJ6Mw42JMiU9F1dLaurag=s180-rw"
+        ],
+        "url":"https://play.google.com/store/apps/details?id=com.mlopezitsolutions.scrumguidereference"
     }
 ]

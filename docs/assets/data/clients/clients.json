@@ -2,49 +2,49 @@
     {
         "name": "AseFiserv",
         "url": "https://asefiserv.com",
-        "image": "http://asefiserv.com/images/xx.png",
+        "image": "assets/img/clients/asefiserv.png",
         "description": "Website design consulting and local technical support"
     },
     {
-        "name": "AseFiserv",
-        "url": "https://asefiserv.com",
-        "image": "http://asefiserv.com/images/xx.png",
+        "name": "Conatt",
+        "url": "https://www.migracion.go.cr/Paginas/CONATT.aspx",
+        "image": "assets/img/clients/conatt.png",
         "description": "Website design consulting and local technical support"
     },
     {
-        "name": "AseFiserv",
-        "url": "https://asefiserv.com",
-        "image": "http://asefiserv.com/images/xx.png",
+        "name": "Essential Arome",
+        "url": "https://essentialarome.com",
+        "image": "assets/img/clients/essential.png",
         "description": "Website design consulting and local technical support"
     },
     {
-        "name": "AseFiserv",
-        "url": "https://asefiserv.com",
-        "image": "http://asefiserv.com/images/xx.png",
+        "name": "GlobalNow",
+        "url": "https://globalnowinc.com/",
+        "image": "assets/img/clients/globalnow.png",
         "description": "Website design consulting and local technical support"
     },
     {
-        "name": "AseFiserv",
-        "url": "https://asefiserv.com",
-        "image": "http://asefiserv.com/images/xx.png",
+        "name": "Stratecha",
+        "url": "https://www.stratecha.com",
+        "image": "assets/img/clients/stratecha.png",
         "description": "Website design consulting and local technical support"
     },
     {
-        "name": "AseFiserv",
-        "url": "https://asefiserv.com",
-        "image": "http://asefiserv.com/images/xx.png",
+        "name": "Tico Electronics",
+        "url": "https://ticoelectronics.com",
+        "image": "assets/img/clients/tico.png",
         "description": "Website design consulting and local technical support"
     },
     {
-        "name": "AseFiserv",
-        "url": "https://asefiserv.com",
-        "image": "http://asefiserv.com/images/xx.png",
+        "name": "3PillarGlobal",
+        "url": "https://3PillarGlobal.com",
+        "image": "assets/img/clients/3pg.jpeg",
         "description": "Website design consulting and local technical support"
     },
     {
-        "name": "AseFiserv",
-        "url": "https://asefiserv.com",
-        "image": "http://asefiserv.com/images/xx.png",
+        "name": "MyndsIT",
+        "url": "https://myndsit.com",
+        "image": "assets/img/clients/mynds.png",
         "description": "Website design consulting and local technical support"
     }
 ]
