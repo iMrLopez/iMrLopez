@@ -74,9 +74,9 @@
             </div>
         </div>
         <div class="row">
-            <div style="display: flex; margin: 10px;">
+            <div style="display: flex; margin: 10px; overflow: auto;">
                 <ng-container *ngFor="let client of clients">
-                    <img [src]="client.image" style="width: 349px; height: 233px; object-fit: scale-down;" [alt]="client.name" class="img-fluid">
+                    <img [src]="client.image" style="width: 349px; height: 233px; object-fit: scale-down; overflow: auto;" [alt]="client.name" class="img-fluid">
                 </ng-container>
             </div>
         </div>

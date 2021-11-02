@@ -20,7 +20,7 @@
     {
         "name": "GlobalNow",
         "url": "https://globalnowinc.com/",
-        "image": "assets/img/clients/globalnow.png",
+        "image": "assets/img/clients/globalnow.jpg",
         "description": "Website design consulting and local technical support"
     },
     {
@@ -39,12 +39,6 @@
         "name": "3PillarGlobal",
         "url": "https://3PillarGlobal.com",
         "image": "assets/img/clients/3pg.jpeg",
-        "description": "Website design consulting and local technical support"
-    },
-    {
-        "name": "MyndsIT",
-        "url": "https://myndsit.com",
-        "image": "assets/img/clients/mynds.png",
         "description": "Website design consulting and local technical support"
     }
 ]

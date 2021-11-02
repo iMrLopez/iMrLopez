@@ -16,6 +16,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './modules/home/home.component';
 import { SafePipe } from './shared/pipes/safeUrl.pipe';
+import { InstagramComponent } from './components/instagram/instagram.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { SafePipe } from './shared/pipes/safeUrl.pipe';
     FooterComponent,
     HeaderComponent,
     HomeComponent,
-    SafePipe
+    SafePipe,
+    InstagramComponent
   ],
   imports: [
     BrowserModule,
