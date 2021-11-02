@@ -1,42 +1,54 @@
-<section id="portfolio_sec" class="portfolio-sec sec-pad-top-sm">
-  <div class="mb-15">
-    <h2 class="pull-left float-none-xs">portfolio</h2>
-    <div class="filter-wrap pull-right float-none-xs">
-      <!-- Portfolio Filters -->
-      <ul id="filters">
-        <li>
-          <button class="mdl-button mdl-js-button mdl-button--raised" [ngClass]="{'mdl-button--colored':shouldPaintFilter({'description':'all'})}"
-            (click)="toggleFilter({'description':'all'})">All</button>
-        </li>
-        <li *ngFor="let category of categories">
-          <button class="mdl-button mdl-js-button mdl-button--raised" [ngClass]="{'mdl-button--colored':shouldPaintFilter(category)}"
-            (click)="toggleFilter(category)">{{category.description}}</button>
-        </li>
-      </ul>
-      <!--/Portfolio Filters -->
-      <div class="clearfix"></div>
+<section class="untree_co-section"
+  id="portfolio-section">
+  <div class="container">
+    <div class="row">
+      <div class="section-heading text-center col-md-12 aos-init aos-animate"
+        data-aos="fade-up"
+        data-aos-delay="0">
+        <h2>My Portfolio</h2>
+      </div>
     </div>
-    <div class="clearfix"></div>
-  </div>
-  <div class="gallery-wrap mb-30">
-    <div class="portfolio-wrap project-gallery" style="max-width: 940px;">
-      <ul id="portfolio" class="portf auto-construct  project-gallery" data-col="3">
-        <ng-container *ngFor="let project of projects">
-          <a href="#open-modal" (click)="selectedProject = project">
-            <li class="item mdl-card mdl-shadow--2dp pa-0 branding"
-              style="max-width: 200px; height: auto; margin: 10px; display: inline-block;"
-              *ngIf="shouldDisplayProject(project)">
-              <div class="light-img-wrap mdl-card__title pa-0">
-                <img class="img-responsive" [src]="project.images[0]" alt="{{project.name}} Image">
-                <div class="light-img-overlay"></div>
-                <span class="img-cap">{{project.name}}</span>
-              </div>
-            </li>
-          </a>
-        </ng-container>
+    <!--
+    <div class="filters aos-init aos-animate"
+      data-aos="fade-up"
+      data-aos-delay="100">
+      <ul>
+        <li class="active"
+          data-filter="*">All</li>
+        <li data-filter=".packaging">Packaging</li>
+        <li data-filter=".mockup">Mockup</li>
+        <li data-filter=".typography">Typography</li>
+        <li data-filter=".photography">Photography</li>
       </ul>
+    </div>
+  -->
+    <div class="filters-content mb-5 aos-init aos-animate"
+      data-aos="fade-up"
+      data-aos-delay="200">
+      <div class="row grid"
+        style="position: relative; height: 834.266px;">
+        <ng-container *ngFor="let project of projects">
+          <div class="single-portfolio col-sm-4 all mockup">
+            <a [href]="project.url"
+              data-fancybox="gal">
+              <ng-container [ngSwitch]="project.media.type">
+                <img *ngSwitchCase="'thumbnail'"
+                  [src]="project.media.thumbnail"
+                  style="width: 349px; height: 233px; object-fit: scale-down;"
+                  [alt]="project.description"
+                  class="img-fluid">
+                <iframe *ngSwitchCase="'embed'"
+                  [src]="project.media.embed | safe"
+                  style="width: 349px; height: 233px; object-fit: scale-down;"></iframe>
+              </ng-container>
+              <div class="contents">
+                <h3>{{project.name}}</h3>
+                <div class="cat">{{project.description}}</div>
+              </div>
+            </a>
+          </div>
+        </ng-container>
+      </div>
     </div>
   </div>
 </section>
-
-<app-modal *ngIf="selectedProject" [proj]="selectedProject" [id]="selectedProject?.name + '_modal'"></app-modal>

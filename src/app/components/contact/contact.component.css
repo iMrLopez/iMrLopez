@@ -1,4 +1,7 @@
-.social-links ::ng-deep .social-item {
-    float: left;
-    margin: 25px;
+.social * {
+    padding: 10px;
+}
+
+::ng-deep .profile-badge--width-330{
+    width: 100% !important;
 }

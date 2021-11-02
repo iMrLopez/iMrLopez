@@ -3,18 +3,18 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-blog',
-  templateUrl: './blog.component.html',
-  styleUrls: ['./blog.component.css']
+  selector: 'app-testimonials',
+  templateUrl: './testimonials.component.html',
+  styleUrls: ['./testimonials.component.css']
 })
-export class BlogComponent implements OnInit {
-  public posts = [];
+export class TestimonialsComponent implements OnInit {
+  public clients = [];
 
-  private _jsonURL = 'assets/data/blog/blog.json';
+  private _jsonURL = 'assets/data/clients/clients.json';
 
   constructor(private http: HttpClient) {
     this.getJSON().subscribe(data => {
-      this.posts = data;
+      this.clients = data;
     });
   }
 
@@ -24,5 +24,6 @@ export class BlogComponent implements OnInit {
   getJSON(): Observable<any> {
     return this.http.get(this._jsonURL);
   }
+
 
 }

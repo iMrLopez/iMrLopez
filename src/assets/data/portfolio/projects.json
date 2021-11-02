@@ -2,78 +2,99 @@
     {
         "name": "Orvis TV",
         "description":"Orvis TV is a mobile application for Android devices that allows the users to sintonize TV channels from their local stations for free.",
-        "type": {
-            "description":"Mobile"
+        "type": "Mobile",
+        "media":{
+            "type":"thumbnail",
+            "thumbnail":"https://play-lh.googleusercontent.com/ZxzUbTlsVlIo2Iyfju0-wZSvIIP3_SYEjSkJmi-0WyHAwXT3cS7jpJPAQBEAxP-aM69p=s180-rw",
+            "video":"",
+            "embed":""
         },
-        "images":[
-            "https://play-lh.googleusercontent.com/ZxzUbTlsVlIo2Iyfju0-wZSvIIP3_SYEjSkJmi-0WyHAwXT3cS7jpJPAQBEAxP-aM69p=s180-rw"
-        ],
-        "url":"https://play.google.com/store/apps/details?id=com.orvis.crc"
+        "url":"https://play.google.com/store/apps/details?id=com.orvis.crc",
+        "status":"Finished",
+        "technologies":["Android", "Firebase", "Flutter"]
     },
     {
         "name": "EseMenu",
         "description":"EseMenu is a mobile & web application for restaurants, its main objective is to provide a real-time updated menu for any type of restaurant.",
-        "type": {
-            "description":"Web"
+        "type":"Web",
+        "media":{
+            "type":"embed",
+            "thumbnail":"",
+            "video":"",
+            "embed":"https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2FMyndsIT%2Fvideos%2F901708643683837%2F&show_text=false&width=476&t=0&autoplay=1&mute=1"
         },
-        "images":[
-            "https://scontent-dfw5-2.xx.fbcdn.net/v/t1.6435-0/p552x414/116363670_746808229491418_8538163890286823832_n.png?_nc_cat=100&ccb=1-3&_nc_sid=730e14&_nc_ohc=IygDrdRbvzcAX8X7DXS&_nc_ht=scontent-dfw5-2.xx&tp=30&oh=0094680e712ed35f417cacb497ead486&oe=60CEB3BD"
-        ],
-        "url":"https://esemenu.com"
+        "url":"https://esemenu.com",
+        "status":"Finished",
+        "technologies":["Android", "Firebase", "Flutter"]
     },
     {
         "name": "MascoTiks",
         "description":"MascoTiks is a mobile & web application for pet registering and tracking, its main objective is to provide a tool for users to keep track of their pets.",
-        "type": {
-            "description":"Web"
+        "type": "Web",
+        "media":{
+            "type":"thumbnail",
+            "thumbnail":"assets/img/mascotiks.png",
+            "video":"",
+            "embed":""
         },
-        "images":[
-            "https://scontent.fsjo13-1.fna.fbcdn.net/v/t1.6435-9/89153124_100732528228812_2174267729777786880_n.png?_nc_cat=104&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=DXQ7TtnVV3UAX-cMeHT&_nc_oc=AQkF002NF8wteaEWYkxZfM8N3CdvYKJptpeZfVSmrAbBQEDT2rFTTaL3-0b_KIknKMU&_nc_ht=scontent.fsjo13-1.fna&oh=6901bff3ba5e3a677b21f74f6ebf0ff4&oe=60CE2936"
-        ],
-        "url":"https://mascotikscr.com"
+        "url":"https://mascotikscr.com",
+        "status":"Work In Progress",
+        "technologies":["Android", "Firebase", "Flutter"]
     },
     {
         "name": "Colegio Tecnico Jesus Ocana Rojas",
         "description":"Website design for a stable web presence",
-        "type": {
-            "description":"Web"
+        "type": "Web",
+        "media":{
+            "type":"thumbnail",
+            "thumbnail":"https://vocaalajuela.files.wordpress.com/2013/10/img.png?w=300&h=228",
+            "video":"",
+            "embed":""
         },
-        "images":[
-            "https://vocaalajuela.files.wordpress.com/2013/10/img.png?w=300&h=228"
-        ],
-        "url":"http://ctpjor.ed.cr/"
+        "url":"http://ctpjor.ed.cr/",
+        "status":"Finished",
+        "technologies":["Wordpress", "Javascript", "Angular"]
     },
     {
         "name": "MobiFactura",
         "description":"Mobile + Angular + NodeJs application for creation of invoices in the Costa Rican legislation",
-        "type": {
-            "description":"Mobile"
+        "type": "Mobile",
+        "media":{
+            "type":"thumbnail",
+            "thumbnail": "https://mobifactura.web.app/assets/img/brand/brain.png",
+            "video":"",
+            "embed":""
         },
-        "images":[
-            "https://mobifactura.web.app/assets/img/brand/brain.png"
-        ],
-        "url":"https://mobifactura.web.app"
+        "url":"https://mobifactura.web.app",
+        "status":"Work In Progress",
+        "technologies":["Android", "Firebase", "Flutter"]
     },
     {
         "name": "China TV",
         "description":"Mobile application for streaming of Chinese tv channels in Android",
-        "type": {
-            "description":"Mobile"
+        "type": "Mobile",
+        "media":{
+            "type":"thumbnail",
+            "thumbnail": "https://play-lh.googleusercontent.com/LcRST7eevMd1tzqzT0fW4s9TuxhwQWJoZuB9VAACg_N7bdo0sNRq9Rpw4EVXjEW8OOo=s180-rw",
+            "video":"",
+            "embed":""
         },
-        "images":[
-            "https://play-lh.googleusercontent.com/LcRST7eevMd1tzqzT0fW4s9TuxhwQWJoZuB9VAACg_N7bdo0sNRq9Rpw4EVXjEW8OOo=s180-rw"
-        ],
-        "url":"https://play.google.com/store/apps/details?id=com.mlopezitsolutions.chinatv"
+        "url":"https://play.google.com/store/apps/details?id=com.mlopezitsolutions.chinatv",
+        "status":"Finished",
+        "technologies":["Android", "Flutter"]
     },
     {
         "name": "SCRUM Guide Handbook",
         "description":"A Handbook for scrum, just that.",
-        "type": {
-            "description":"Mobile"
+        "type": "Mobile",
+        "media":{
+            "type":"thumbnail",
+            "thumbnail":"https://play-lh.googleusercontent.com/wLQBlUHn-dgw32RFZvDMfUKt2B0t2VI_5FpxNSSV4aQp5zJ6Mw42JMiU9F1dLaurag=s180-rw",
+            "video":"",
+            "embed":""
         },
-        "images":[
-            "https://play-lh.googleusercontent.com/wLQBlUHn-dgw32RFZvDMfUKt2B0t2VI_5FpxNSSV4aQp5zJ6Mw42JMiU9F1dLaurag=s180-rw"
-        ],
-        "url":"https://play.google.com/store/apps/details?id=com.mlopezitsolutions.scrumguidereference"
+        "url":"https://play.google.com/store/apps/details?id=com.mlopezitsolutions.scrumguidereference",
+        "status":"Finished",
+        "technologies":["Android", "Java"]
     }
 ]

@@ -1,56 +1,43 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { NgImageSliderModule } from 'ng-image-slider';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PreloaderComponent } from './shared/preloader/preloader.component';
-import { HeaderComponent } from './shared/header/header.component';
-import { SidebarComponent } from './shared/sidebar/sidebar.component';
-import { AboutComponent } from './components/about/about.component';
-import { SkillsComponent } from './components/skills/skills.component';
-import { ProfileComponent } from './components/profile/profile.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
-import { InterestComponent } from './components/interest/interest.component';
-import { ExperienceComponent } from './components/experience/experience.component';
-import { EducationComponent } from './components/education/education.component';
+import { BioComponent } from './components/bio/bio.component';
+import { NavComponent } from './components/nav/nav.component';
+import { ServicesComponent } from './components/services/services.component';
+import { ResumeComponent } from './components/resume/resume.component';
+import { TestimonialsComponent } from './components/testimonials/testimonials.component';
 import { BlogComponent } from './components/blog/blog.component';
-import { ReferenceComponent } from './components/reference/reference.component';
-import { ClientsComponent } from './components/clients/clients.component';
-import { PriceComponent } from './components/price/price.component';
 import { ContactComponent } from './components/contact/contact.component';
-import { FooterComponent } from './shared/footer/footer.component';
-import { SocialIconsComponent } from './shared/social-icons/social-icons.component';
-import { ModalComponent } from './shared/modal/modal.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
+import { HomeComponent } from './modules/home/home.component';
+import { SafePipe } from './shared/pipes/safeUrl.pipe';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    PreloaderComponent,
-    HeaderComponent,
-    SidebarComponent,
-    AboutComponent,
-    SkillsComponent,
-    ProfileComponent,
     PortfolioComponent,
-    InterestComponent,
-    ExperienceComponent,
-    EducationComponent,
+    BioComponent,
+    NavComponent,
+    ServicesComponent,
+    ResumeComponent,
+    TestimonialsComponent,
     BlogComponent,
-    ReferenceComponent,
-    ClientsComponent,
-    PriceComponent,
     ContactComponent,
     FooterComponent,
-    SocialIconsComponent,
-    ModalComponent
+    HeaderComponent,
+    HomeComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    NgImageSliderModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
