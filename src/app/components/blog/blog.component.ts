@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import * as converter from 'xml-js';
 
 @Component({
   selector: 'app-blog',
@@ -10,11 +11,13 @@ import { Observable } from 'rxjs';
 export class BlogComponent implements OnInit {
   public posts = [];
 
-  private _jsonURL = 'assets/data/blog/blog.json';
+  private _jsonURL = 'https://blog.marnylopez.com/feeds/posts/default';
 
   constructor(private http: HttpClient) {
-    this.getJSON().subscribe(data => {
-      this.posts = data;
+    this.getJSON().subscribe(xml => {
+      let result1 = converter.xml2json(xml, {compact: true, spaces: 2});
+      let parsedFeed = JSON.parse(result1).feed.entry.map((a) => a.link.find((b) => b._attributes.rel === 'alternate'));
+      this.posts = parsedFeed;
     });
   }
 
@@ -22,7 +25,8 @@ export class BlogComponent implements OnInit {
   }
 
   getJSON(): Observable<any> {
-    return this.http.get(this._jsonURL);
+    return this.http.get(this._jsonURL, { responseType: 'text' });
   }
+
 
 }

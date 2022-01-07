@@ -17,12 +17,13 @@
                         data-aos-delay="100"
                         class="aos-init aos-animate"
                         *ngFor="let post of posts">
-                        <a [href]="post.url" class="d-block d-md-flex justify-content-between align-items-center">
+                        <a [href]="post._attributes.href"
+                            class="d-block d-md-flex justify-content-between align-items-center">
                             <div>
-                                <span class="d-block date">{{post.date}}</span>
-                                <h3>{{post.title}}</h3>
+                                <!-- <span class="d-block date">{{post.link[4]._attributes.href}}</span> -->
+                                <h3>{{post._attributes.title}}</h3>
                             </div>
-                            <span class="read">{{post.read}}</span>
+                            <!-- <span class="read">{{post.read}}</span> -->
                         </a>
                     </li>
                 </ul>
