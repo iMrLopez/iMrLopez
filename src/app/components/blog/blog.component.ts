@@ -11,7 +11,7 @@ import * as converter from 'xml-js';
 export class BlogComponent implements OnInit {
   public posts = [];
 
-  private _jsonURL = 'https://blog.marnylopez.com/feeds/posts/default';
+  private _jsonURL = 'https://scrappy-php.herokuapp.com/?url=https://blog.marnylopez.com/feeds/posts/default';
 
   constructor(private http: HttpClient) {
     this.getJSON().subscribe(xml => {
