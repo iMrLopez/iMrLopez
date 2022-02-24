@@ -17,6 +17,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './modules/home/home.component';
 import { SafePipe } from './shared/pipes/safeUrl.pipe';
 import { InstagramComponent } from './components/instagram/instagram.component';
+import { ScheduleComponent } from './modules/schedule/schedule.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { InstagramComponent } from './components/instagram/instagram.component';
     HeaderComponent,
     HomeComponent,
     SafePipe,
-    InstagramComponent
+    InstagramComponent,
+    ScheduleComponent
   ],
   imports: [
     BrowserModule,
