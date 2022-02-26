@@ -1,0 +1,7 @@
+<main>
+    <p *ngFor="let testim of testimonials">
+        {{testim.description}}
+        <a [href]="testim.url"><span style="font-style:italic">- {{testim.name}}</span></a>
+    </p>
+    <a href="https://linkedin.com/in/marnylopez.com">View more of my happy clients</a>
+</main>

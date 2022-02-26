@@ -5,7 +5,7 @@
         "type": "Mobile",
         "media":{
             "type":"thumbnail",
-            "thumbnail":"https://play-lh.googleusercontent.com/ZxzUbTlsVlIo2Iyfju0-wZSvIIP3_SYEjSkJmi-0WyHAwXT3cS7jpJPAQBEAxP-aM69p=s180-rw",
+            "thumbnail":"assets/img/crtv.webp",
             "video":"",
             "embed":""
         },
@@ -61,7 +61,7 @@
         "type": "Mobile",
         "media":{
             "type":"thumbnail",
-            "thumbnail": "https://mobifactura.web.app/assets/img/brand/brain.png",
+            "thumbnail": "asssets/img/clients/mynds.png",
             "video":"",
             "embed":""
         },
@@ -75,7 +75,7 @@
         "type": "Mobile",
         "media":{
             "type":"thumbnail",
-            "thumbnail": "https://play-lh.googleusercontent.com/LcRST7eevMd1tzqzT0fW4s9TuxhwQWJoZuB9VAACg_N7bdo0sNRq9Rpw4EVXjEW8OOo=s180-rw",
+            "thumbnail": "assets/img/cntv.webp",
             "video":"",
             "embed":""
         },
@@ -89,7 +89,7 @@
         "type": "Mobile",
         "media":{
             "type":"thumbnail",
-            "thumbnail":"https://play-lh.googleusercontent.com/wLQBlUHn-dgw32RFZvDMfUKt2B0t2VI_5FpxNSSV4aQp5zJ6Mw42JMiU9F1dLaurag=s180-rw",
+            "thumbnail":"assets/img/scrm.webp",
             "video":"",
             "embed":""
         },

@@ -1,0 +1,20 @@
+#blog-section{
+    background-color: #28242c !important;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: white;
+}
+
+h2 {
+    color: white !important;
+}
+
+h3 {
+    color: white !important;
+}
+
+.site-service-item {
+    background-color: white !important;;
+    color: black;
+    padding: 15px;
+}

@@ -7,45 +7,21 @@
         <h2>My Portfolio</h2>
       </div>
     </div>
-    <!--
-    <div class="filters aos-init aos-animate"
-      data-aos="fade-up"
-      data-aos-delay="100">
-      <ul>
-        <li class="active"
-          data-filter="*">All</li>
-        <li data-filter=".packaging">Packaging</li>
-        <li data-filter=".mockup">Mockup</li>
-        <li data-filter=".typography">Typography</li>
-        <li data-filter=".photography">Photography</li>
-      </ul>
-    </div>
-  -->
     <div class="filters-content mb-5 aos-init aos-animate"
       data-aos="fade-up"
       data-aos-delay="200">
-      <div class="row grid"
-        style="position: relative; height: 834.266px;">
+      <div class="row grid">
         <ng-container *ngFor="let project of projects">
-          <div class="single-portfolio col-sm-4 all mockup">
-            <a [href]="project.url"
-              data-fancybox="gal">
+            <a [href]="project.url">
               <ng-container [ngSwitch]="project.media.type">
                 <img *ngSwitchCase="'thumbnail'"
                   [src]="project.media.thumbnail"
-                  style="width: 349px; height: 233px; object-fit: scale-down;"
-                  [alt]="project.description"
-                  class="img-fluid">
+                  [alt]="project.description">
                 <iframe *ngSwitchCase="'embed'"
-                  [src]="project.media.embed | safe"
-                  style="width: 349px; height: 233px; object-fit: scale-down;"></iframe>
+                  [src]="project.media.embed | safe" ></iframe>
               </ng-container>
-              <div class="contents">
-                <h3>{{project.name}}</h3>
-                <div class="cat">{{project.description}}</div>
-              </div>
             </a>
-          </div>
+            <span class="tooltiptext">{{project.name}}</span>
         </ng-container>
       </div>
     </div>

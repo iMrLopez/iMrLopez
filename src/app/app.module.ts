@@ -9,7 +9,7 @@ import { BioComponent } from './components/bio/bio.component';
 import { NavComponent } from './components/nav/nav.component';
 import { ServicesComponent } from './components/services/services.component';
 import { ResumeComponent } from './components/resume/resume.component';
-import { TestimonialsComponent } from './components/testimonials/testimonials.component';
+import { TestimonialsComponent } from './components/resume/components/testimonials/testimonials.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';

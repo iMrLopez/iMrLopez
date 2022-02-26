@@ -8355,7 +8355,7 @@ h4,
 }
 
 .site-section {
-	padding: 100px 0;
+	padding: 105px 0;
 }
 @media (max-width: 991.98px) {
 	.site-section {
@@ -8369,15 +8369,24 @@ h4,
 .img-wrap:before {
 	z-index: -1;
 	right: 0;
-	-webkit-transform: translate(40%, -20%);
-	-ms-transform: translate(40%, -20%);
-	transform: translate(40%, -20%);
+	transform: translate(-10%,-20%);
 	position: absolute;
 	content: "";
 	width: 304px;
 	height: 264px;
 	background: url(../img/xdots.webp) right top;
 }
+.img-wrap:after {
+	z-index: -1;
+	right: 0;
+	transform: translate(-100%,50%);
+	position: absolute;
+	content: "";
+	width: 304px;
+	height: 264px;
+	background: url(../img/xdots.webp) right top;
+}
+
 
 .site-service-item {
 	padding: 30px;

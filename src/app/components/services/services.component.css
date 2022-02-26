@@ -1,0 +1,15 @@
+#services-section{
+    background-color: #28242c !important;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: white;
+}
+
+h2 {
+    color: white;
+}
+
+.site-service-item {
+    background-color: white !important;;
+    color: black;
+}

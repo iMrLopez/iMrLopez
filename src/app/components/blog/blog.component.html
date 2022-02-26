@@ -6,27 +6,69 @@
                 data-aos="fade-up"
                 data-aos-delay="0">
                 <div class="section-heading text-center">
-                    <h2>My blog posts</h2>
+                    <h2>My presence on the inter-webs</h2>
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center">
-            <div class="col-md-9">
+        <div class="row justify-content-center"
+            style="height: 870px; overflow: hidden;">
+            <div class="col-md-6">
+                <h3 class="mb-5">My blog posts</h3>
                 <ul class="list-unstyled blog-entries">
                     <li data-aos="fade-up"
                         data-aos-delay="100"
-                        class="aos-init aos-animate"
-                        *ngFor="let post of posts">
+                        class="aos-init aos-animate site-service-item"
+                        *ngFor="let post of posts"
+                        style="margin-bottom: 10px;">
                         <a [href]="post._attributes.href"
                             class="d-block d-md-flex justify-content-between align-items-center">
                             <div>
                                 <!-- <span class="d-block date">{{post.link[4]._attributes.href}}</span> -->
-                                <h3>{{post._attributes.title}}</h3>
+                                <h4>{{post._attributes.title}}</h4>
+                                <span>Read more...</span>
                             </div>
-                            <!-- <span class="read">{{post.read}}</span> -->
                         </a>
                     </li>
                 </ul>
+            </div>
+            <div class="col-md-6">
+                <h3 class="mb-5">My YouTube & Instagram accounts</h3>
+                <div style="height: 100%;">
+                    <div class="site-service-item"
+                        style="height: 40%;">
+                        <div class="g-ytsubscribe"
+                            data-channelid="UC8Cot-X1Rx5IgHocBQ21tOw"
+                            data-layout="full"
+                            data-count="default"></div>
+                        <br />
+                        <iframe width="500"
+                            height="260"
+                            src="https://www.youtube.com/embed/videoseries?list=PLLmghfG-ErQyw0FyU-jTWO0yIM1kHXhyu"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                        <br />
+                    </div>
+                    <div class="site-service-item"
+                        style="height: 40%; margin-top: 30px;">
+                        <p>If you are curious on what I am working on right now make sure to have a look at my GH profile, or follow my newsletter on LinkedIn to get the blog posts on the left in your inbox when I publish them</p>
+                        <!-- Place this tag where you want the button to render. -->
+                        <a class="github-button"
+                            href="https://github.com/iMrLopez"
+                            data-size="large"
+                            data-show-count="true"
+                            aria-label="Follow @iMrLopez on GitHub">Follow @iMrLopez</a>
+                        <div class="badge-base LI-profile-badge"
+                            data-locale="en_US"
+                            data-size="large"
+                            data-theme="light"
+                            data-type="HORIZONTAL"
+                            data-vanity="marnylopez"
+                            data-version="v1">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

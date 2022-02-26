@@ -6,38 +6,7 @@
     </div>
     <div class="site-mobile-menu-body">
         <ul class="site-nav-wrap">
-            <li class="active">
-                <a href="#home-section"
-                    class="nav-link">Home</a>
-            </li>
-            <li>
-                <a href="#about-section"
-                    class="nav-link">About Me</a>
-            </li>
-            <li>
-                <a href="#portfolio-section"
-                    class="nav-link">My Portfolio</a>
-            </li>
-            <li>
-                <a href="#services-section"
-                    class="nav-link">My Services</a>
-            </li>
-            <li>
-                <a href="#resume-section"
-                    class="nav-link">My Experience</a>
-            </li>
-            <li>
-                <a href="#testimonials-section"
-                    class="nav-link">Testimonials</a>
-            </li>
-            <li>
-                <a href="#blog-section"
-                    class="nav-link">Blog Entries</a>
-            </li>
-            <li>
-                <a href="#contact-section"
-                    class="nav-link active">Contact</a>
-            </li>
+            <ng-container *ngIf="false else links"></ng-container>
         </ul>
     </div>
 </div>
@@ -47,38 +16,7 @@
             <a href="index.html"
                 class="d-block text-center float-left logo">ML</a>
             <ul class="js-clone-nav ml-0 pl-0 d-none d-lg-inline-block site-menu mx-auto text-center">
-                <li class="active">
-                    <a href="#home-section"
-                        class="nav-link">Home</a>
-                </li>
-                <li>
-                    <a href="#about-section"
-                        class="nav-link">About Me</a>
-                </li>
-                <li>
-                    <a href="#portfolio-section"
-                        class="nav-link">My Portfolio</a>
-                </li>
-                <li>
-                    <a href="#services-section"
-                        class="nav-link">My Services</a>
-                </li>
-                <li>
-                    <a href="#resume-section"
-                        class="nav-link">My Experience</a>
-                </li>
-                <li>
-                    <a href="#testimonials-section"
-                        class="nav-link">Testimonials</a>
-                </li>
-                <li>
-                    <a href="#blog-section"
-                        class="nav-link">Blog Entries</a>
-                </li>
-                <li>
-                    <a href="#contact-section"
-                        class="nav-link active">Contact</a>
-                </li>
+                <ng-container *ngIf="false else links"></ng-container>
             </ul>
             <a href="#"
                 class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block light d-lg-none"
@@ -89,3 +27,30 @@
         </div>
     </div>
 </nav>
+
+<ng-template #links>
+    <li class="active">
+        <a href="#home-section"
+            class="nav-link">Home</a>
+    </li>
+    <li>
+        <a href="#about-section"
+            class="nav-link">About Me</a>
+    </li>
+    <li>
+        <a href="#services-section"
+            class="nav-link">My Services & clients</a>
+    </li>
+    <li>
+        <a href="#blog-section"
+            class="nav-link">My presence on the inter-webs</a>
+    </li>
+    <li>
+        <a href="#portfolio-section"
+            class="nav-link">My Portfolio</a>
+    </li>
+    <li>
+        <a href="#contact-section"
+            class="nav-link active">Contact</a>
+    </li>
+</ng-template>
