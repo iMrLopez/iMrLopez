@@ -1,4 +1,4 @@
-## !! Hi everyone 👋 I am Marny !!  <img src="https://badges.pufler.dev/visits/iMrLopez/iMrLopez?style=for-the-badge" align="right" />
+## !! Hi everyone 👋 I am Marny !!  ![](https://komarev.com/ghpvc/?username=iMrLopez)
 
 
 I am a developer who is passionate about web, mobile and hybrid development.
