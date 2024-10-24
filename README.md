@@ -1,4 +1,5 @@
-## !! Hi everyone 👋 I am Marny !!  ![](https://komarev.com/ghpvc/?username=iMrLopez)
+## !! Hi everyone 👋 I am Marny !! 
+![](https://komarev.com/ghpvc/?username=iMrLopez&base=1000&style=for-the-badge)
 
 
 I am a developer who is passionate about web, mobile and hybrid development.
