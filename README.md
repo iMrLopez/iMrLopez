@@ -37,47 +37,9 @@ I like gaming and tend to upload to my youtube channels some gameplays and devel
   </a>
 </p>
 
-
 <p align = "center">
-  <b>📊 My Github Stats</b>:
-  <br>
-  <img src="https://github-readme-stats.vercel.app/api?username=iMrLopez&theme=tokyonight"/>
-</p>
-
-<br>
-<br>
-
-<details>
-  <summary align="center">🤖 <b>My programming stats</b>:</summary>
-  <br>
-  💻 **I mostly code web and mobile (cool right?)**
-  <br>
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=iMrLopez&layout=compact&theme=tokyonight" />
-
-
-  🕒 **I am more productive during the nights (who isnt?)**
-  ```text    
-    🌞 Morning     50 commits     ████░░░░░░░░░░░░░░░░░░░░░    8.99% 
-    🌆 Daytime     75 commits     ███████░░░░░░░░░░░░░░░░░░   30.38% 
-    🌃 Evening    168 commits     ████████░░░░░░░░░░░░░░░░░   35.44% 
-    🌙 Night      144 commits     ██████████████░░░░░░░░░░░   25.19%
-  ```
-  📅 **I am Most Productive on Mondays (weird, right?)**
-  ```text
-    Sunday       54 commits     ██░░░░░░░░░░░░░░░░░░░░░░░   11.39% 
-    Monday       96 commits     █████░░░░░░░░░░░░░░░░░░░░   20.25%
-    Tuesday      51 commits     ██░░░░░░░░░░░░░░░░░░░░░░░   10.76% 
-    Wednesday    45 commits     ██░░░░░░░░░░░░░░░░░░░░░░░   9.49% 
-    Thursday     68 commits     ███░░░░░░░░░░░░░░░░░░░░░░   14.35% 
-    Friday       73 commits     ███░░░░░░░░░░░░░░░░░░░░░░   15.4% 
-    Saturday     87 commits     ████░░░░░░░░░░░░░░░░░░░░░   18.35% 
-  ```
-  
-  📊 **This week I spent my time on** 
-  ```text
-  💻 Operating Systems: 
-  Linux                    3 hrs 24 mins       █████████████████████████   100.0%
-  Windows (Gaming)         1 hrs 00 mins       ███████████░░░░░░░░░░░░░░    50.0%
-  ```
-  </details>
 </p>
+
+<br>
+<br>
