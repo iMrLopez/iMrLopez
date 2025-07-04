@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Calendar, Clock } from "lucide-react"
+import { Calendar, Clock, ExternalLink } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 
 interface BlogPostCardProps {
@@ -12,11 +12,15 @@ interface BlogPostCardProps {
   publishedAt: string
   readTime: string
   tags: string[]
+  url?: string
 }
 
-export function BlogPostCard({ id, title, excerpt, publishedAt, readTime, tags }: BlogPostCardProps) {
+export function BlogPostCard({ id, title, excerpt, publishedAt, readTime, tags, url }: BlogPostCardProps) {
+  const blogUrl = url || `/blog/${id}`
+  const isExternal = url && (url.startsWith("http") || url.startsWith("https"))
+
   return (
-    <Link href={`/blog/${id}`}>
+    <Link href={blogUrl} target={isExternal ? "_blank" : "_self"} rel={isExternal ? "noopener noreferrer" : undefined}>
       <article className="group relative overflow-hidden rounded-xl bg-zinc-800/50 backdrop-blur-sm border border-zinc-700/50 hover:border-zinc-600/50 transition-all duration-300 cursor-pointer">
         {/* Content */}
         <div className="p-6">
@@ -35,6 +39,12 @@ export function BlogPostCard({ id, title, excerpt, publishedAt, readTime, tags }
               <Clock className="h-4 w-4" />
               <span>{readTime}</span>
             </div>
+            {isExternal && (
+              <div className="flex items-center gap-1 text-purple-400">
+                <ExternalLink className="h-4 w-4" />
+                <span>External</span>
+              </div>
+            )}
           </div>
 
           <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-purple-300 transition-colors line-clamp-2">

@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { Calendar, MapPin, Briefcase } from "lucide-react"
-import { Code, Database, Globe, Server, GitBranch, Palette, Shield, Cloud, Monitor, Layers } from "lucide-react"
+import { Code, Database, Globe, Server, GitBranch, Cloud, Monitor, Layers } from "lucide-react"
 
 interface Technology {
   name: string
@@ -21,67 +21,99 @@ interface Experience {
 
 const experiences: Experience[] = [
   {
-    title: "Senior Frontend Developer",
-    company: "TechCorp Solutions",
-    location: "San Francisco, CA",
-    period: "2022 - Present",
+    title: "Senior Full Stack Engineer",
+    company: "Cisco",
+    location: "San Jose, Costa Rica",
+    period: "February 2024 - Present",
     description:
-      "Leading frontend development for enterprise applications, mentoring junior developers, and implementing modern React patterns with TypeScript. Improved application performance by 40% and reduced bundle size by 30%.",
+      "Software engineer in React for the SVP team, developing enterprise-level applications and contributing to Cisco's software solutions.",
     technologies: [
       { name: "React", icon: Code },
       { name: "TypeScript", icon: Code },
-      { name: "Next.js", icon: Globe },
-      { name: "GraphQL", icon: Database },
-      { name: "AWS", icon: Cloud },
-      { name: "Docker", icon: Server },
-    ],
-  },
-  {
-    title: "Full Stack Developer",
-    company: "StartupXYZ",
-    location: "Remote",
-    period: "2020 - 2022",
-    description:
-      "Built and maintained full-stack web applications using React, Node.js, and PostgreSQL. Collaborated with design team to create responsive, accessible user interfaces. Implemented CI/CD pipelines and automated testing.",
-    technologies: [
-      { name: "React", icon: Code },
-      { name: "Node.js", icon: Server },
-      { name: "PostgreSQL", icon: Database },
-      { name: "Express", icon: Server },
+      { name: "JavaScript", icon: Code },
       { name: "Git", icon: GitBranch },
-      { name: "Jest", icon: Shield },
+      { name: "Agile", icon: Monitor },
+      { name: "Enterprise", icon: Server },
     ],
   },
   {
-    title: "Frontend Developer",
-    company: "Digital Agency Pro",
-    location: "New York, NY",
-    period: "2019 - 2020",
+    title: "Senior Staff Software Engineer",
+    company: "Mynds IT (Founder)",
+    location: "Alajuela, Costa Rica",
+    period: "January 2014 - Present",
     description:
-      "Developed responsive websites and web applications for various clients. Worked closely with designers to implement pixel-perfect designs. Optimized websites for performance and SEO.",
+      "Founded MyndsIT to deliver cutting-edge web and mobile solutions. Specialize in full-stack development, creating SaaS applications, and staying current with emerging technologies. Provide innovative solutions that empower businesses in the digital landscape.",
     technologies: [
-      { name: "JavaScript", icon: Code },
-      { name: "HTML/CSS", icon: Globe },
-      { name: "Sass", icon: Palette },
-      { name: "jQuery", icon: Code },
-      { name: "WordPress", icon: Monitor },
-      { name: "Photoshop", icon: Layers },
+      { name: "React Native", icon: Code },
+      { name: "NestJS", icon: Server },
+      { name: "Django", icon: Server },
+      { name: "TypeScript", icon: Code },
+      { name: "PostgreSQL", icon: Database },
+      { name: "Firebase", icon: Cloud },
     ],
   },
   {
-    title: "Junior Web Developer",
-    company: "WebDev Studio",
-    location: "Boston, MA",
-    period: "2018 - 2019",
+    title: "Senior Software Development Engineer",
+    company: "Tone",
+    location: "United States (Remote)",
+    period: "June 2022 - February 2024",
     description:
-      "Started my professional journey building websites with HTML, CSS, and JavaScript. Learned modern development practices and collaborated with senior developers on various projects.",
+      "Full-Stack Web Developer specializing in Python (Django), SQL (PostgreSQL), and TypeScript (React.js). Advanced music distribution technology with infrastructure support and website optimization.",
     technologies: [
-      { name: "HTML", icon: Globe },
-      { name: "CSS", icon: Palette },
-      { name: "JavaScript", icon: Code },
-      { name: "Bootstrap", icon: Monitor },
-      { name: "PHP", icon: Server },
-      { name: "MySQL", icon: Database },
+      { name: "Django", icon: Server },
+      { name: "React", icon: Code },
+      { name: "PostgreSQL", icon: Database },
+      { name: "TypeScript", icon: Code },
+      { name: "Python", icon: Server },
+      { name: "SQL", icon: Database },
+    ],
+  },
+  {
+    title: "Senior Full-Stack Web Software Engineer",
+    company: "Riparian LLC",
+    location: "United States (Remote)",
+    period: "March 2020 - May 2022",
+    description:
+      "Worked on Helix and Ion projects, improving system performance and stability through developmental and architectural changes. Migrated to new Vue.js version and built Node.js applications with Express.js for RESTful APIs.",
+    technologies: [
+      { name: "Vue.js", icon: Code },
+      { name: "Node.js", icon: Server },
+      { name: "Express", icon: Server },
+      { name: "TypeScript", icon: Code },
+      { name: "REST API", icon: Globe },
+      { name: "Architecture", icon: Layers },
+    ],
+  },
+  {
+    title: "Senior Software Development Engineer",
+    company: "American Kennel Club",
+    location: "Costa Rica",
+    period: "February 2018 - February 2020",
+    description:
+      "Worked through 3Pillar Global Costa Rica, implementing modifications to internal and external applications (REGIS, BRETT, JPM). Built Python microservices with Angular and React frontends, using MongoDB, Oracle DB, and Redis.",
+    technologies: [
+      { name: "Python", icon: Server },
+      { name: "Angular", icon: Code },
+      { name: "React", icon: Code },
+      { name: "MongoDB", icon: Database },
+      { name: "Oracle", icon: Database },
+      { name: "Redis", icon: Database },
+    ],
+  },
+  {
+    title: "Software Engineer Team Lead",
+    company: "DXC Technology",
+    location: "Heredia, Costa Rica",
+    period: "January 2017 - July 2017",
+    description:
+      "Led multinational team across India, Bulgaria, United States, and Costa Rica. Created SCRUM-based team to automate billing processes and implemented RPA technologies. Focused on process automation and team leadership.",
+    technologies: [
+      { name: "SCRUM", icon: Monitor },
+      { name: "RPA", icon: Server },
+      { name: "Leadership", icon: Briefcase },
+      { name: "Automation", icon: Code },
+      { name: "Process", icon: Layers },
+      { name: "Billing", icon: Database },
     ],
   },
 ]

@@ -30,8 +30,16 @@ export function ContactForm() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000))
+    // Create mailto link with form data
+    const subject = encodeURIComponent(formData.subject || "Contact from Portfolio")
+    const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)
+    const mailtoLink = `mailto:me@marnylopez.com?subject=${subject}&body=${body}`
+
+    // Open email client
+    window.location.href = mailtoLink
+
+    // Simulate form submission delay
+    await new Promise((resolve) => setTimeout(resolve, 1000))
 
     setIsSubmitting(false)
     setIsSubmitted(true)
@@ -47,8 +55,10 @@ export function ContactForm() {
     return (
       <div className="bg-zinc-800/50 backdrop-blur-sm border border-zinc-700/50 rounded-xl p-8 text-center">
         <CheckCircle className="h-16 w-16 text-green-400 mx-auto mb-4" />
-        <h3 className="text-xl font-semibold text-white mb-2">Message Sent!</h3>
-        <p className="text-zinc-400">Thank you for reaching out. I'll get back to you as soon as possible.</p>
+        <h3 className="text-xl font-semibold text-white mb-2">Email Client Opened!</h3>
+        <p className="text-zinc-400">
+          Your email client should have opened with the message pre-filled. Please send it from there.
+        </p>
       </div>
     )
   }
@@ -129,7 +139,7 @@ export function ContactForm() {
           {isSubmitting ? (
             <>
               <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-              Sending...
+              Opening Email Client...
             </>
           ) : (
             <>

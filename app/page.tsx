@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { ArrowRight, Github, Linkedin, Mail, Twitter } from "lucide-react"
+import { ArrowRight, Github, Linkedin, Mail, Twitter, Youtube, Instagram } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { SkillBadge } from "@/components/skill-badge"
@@ -27,64 +27,64 @@ export default function Portfolio() {
   const [projectsPage, setProjectsPage] = useState(1)
 
   const itemsPerPage = 2
-  const projectsPerPage = 8 // 4x2 grid per page
+  const projectsPerPage = 6 // 3x2 grid per page
 
   // Sample data arrays
   const allCourses = [
     {
-      title: "Complete React & Next.js Masterclass",
+      title: "Curso profesional de JavaScript, de cero a experto en 2022!",
       description:
-        "Master modern React development with Next.js, TypeScript, and advanced patterns. Build production-ready applications from scratch.",
+        "Comprehensive JavaScript course covering fundamentals to advanced concepts. Perfect for developers looking to master modern JavaScript development.",
       image: "/placeholder.svg?height=400&width=600",
-      price: "$99",
-      students: 2500,
-      duration: "12 hours",
-      rating: 4.8,
-      level: "Intermediate",
+      price: "Published",
+      students: 0,
+      duration: "Self-paced",
+      rating: 5.0,
+      level: "All Levels",
       url: "https://example.com/course",
-      platform: "Udemy",
+      platform: "Publication",
       type: "course" as const,
     },
     {
-      title: "TypeScript for React Developers",
+      title: "Cross-Platform Development Technologies Analysis",
       description:
-        "Learn TypeScript fundamentals and advanced concepts specifically for React development. Improve code quality and developer experience.",
+        "Analysis of existing cross-platform development technologies and proposal for an automated development process applicable to SMEs focused on multi-platform applications.",
       image: "/placeholder.svg?height=400&width=600",
-      price: "$79",
-      students: 1800,
-      duration: "8 hours",
-      rating: 4.9,
-      level: "Beginner",
-      url: "https://example.com/course",
-      platform: "Skillshare",
-      type: "course" as const,
-    },
-    {
-      title: "Modern CSS & Tailwind CSS",
-      description:
-        "Master modern CSS techniques, Flexbox, Grid, and Tailwind CSS. Create beautiful, responsive designs with confidence.",
-      image: "/placeholder.svg?height=400&width=600",
-      price: "$59",
-      students: 3200,
-      duration: "10 hours",
-      rating: 4.7,
-      level: "Beginner",
-      url: "https://example.com/course",
-      platform: "Coursera",
-      type: "course" as const,
-    },
-    {
-      title: "Advanced JavaScript Patterns",
-      description:
-        "Deep dive into advanced JavaScript concepts, design patterns, and best practices for professional development.",
-      image: "/placeholder.svg?height=400&width=600",
-      price: "$89",
-      students: 1500,
-      duration: "14 hours",
-      rating: 4.6,
+      price: "Research",
+      students: 0,
+      duration: "Academic",
+      rating: 5.0,
       level: "Advanced",
-      url: "https://example.com/course",
-      platform: "Udemy",
+      url: "https://example.com/research",
+      platform: "Publication",
+      type: "course" as const,
+    },
+    {
+      title: "React Native Development Mastery",
+      description:
+        "Master React Native development with Expo, TypeScript, and modern mobile development practices. Build production-ready mobile applications.",
+      image: "/placeholder.svg?height=400&width=600",
+      price: "Certified",
+      students: 0,
+      duration: "Nanodegree",
+      rating: 5.0,
+      level: "Intermediate",
+      url: "https://example.com/certification",
+      platform: "Udacity",
+      type: "course" as const,
+    },
+    {
+      title: "Full-Stack Development with NestJS & React",
+      description:
+        "Complete guide to building scalable full-stack applications using NestJS backend and React frontend with TypeScript and modern development practices.",
+      image: "/placeholder.svg?height=400&width=600",
+      price: "Expert",
+      students: 0,
+      duration: "Professional",
+      rating: 5.0,
+      level: "Advanced",
+      url: "https://myndsit.com",
+      platform: "MyndsIT",
       type: "course" as const,
     },
   ]
@@ -178,131 +178,138 @@ export default function Portfolio() {
 
   const allBlogPosts = [
     {
-      id: "getting-started-with-nextjs",
-      title: "Getting Started with Next.js 15",
+      id: "react-native-expo-guide",
+      title: "Building Mobile Apps with React Native and Expo",
       excerpt:
-        "Explore the latest features in Next.js 15 and learn how to build modern web applications with improved performance and developer experience.",
+        "Complete guide to developing cross-platform mobile applications using React Native and Expo. Learn best practices for performance and user experience.",
       image: "/placeholder.svg?height=400&width=600",
       publishedAt: "2024-01-15",
-      readTime: "5 min read",
-      tags: ["Next.js", "React", "Web Development"],
+      readTime: "8 min read",
+      tags: ["React Native", "Expo", "Mobile Development"],
+      url: "https://medium.com/@marnylopez/react-native-expo-guide",
     },
     {
-      id: "mastering-typescript",
-      title: "Mastering TypeScript for React Development",
+      id: "nestjs-scalable-apis",
+      title: "Building Scalable APIs with NestJS and TypeScript",
       excerpt:
-        "Deep dive into TypeScript best practices for React applications, including advanced types, generics, and utility types.",
+        "Learn how to create robust, scalable backend APIs using NestJS framework with TypeScript. Includes authentication, validation, and database integration.",
       image: "/placeholder.svg?height=400&width=600",
       publishedAt: "2024-01-10",
-      readTime: "8 min read",
-      tags: ["TypeScript", "React", "JavaScript"],
+      readTime: "10 min read",
+      tags: ["NestJS", "TypeScript", "Backend"],
+      url: "https://dev.to/marnylopez/nestjs-scalable-apis",
     },
     {
-      id: "css-animations-guide",
-      title: "Creating Smooth CSS Animations",
+      id: "django-fastapi-comparison",
+      title: "Django vs FastAPI: Choosing the Right Python Framework",
       excerpt:
-        "Learn how to create beautiful, performant CSS animations that enhance user experience without compromising performance.",
+        "Comprehensive comparison between Django and FastAPI for Python web development. Understand when to use each framework for your projects.",
       image: "/placeholder.svg?height=400&width=600",
       publishedAt: "2024-01-05",
-      readTime: "6 min read",
-      tags: ["CSS", "Animation", "UI/UX"],
+      readTime: "7 min read",
+      tags: ["Django", "FastAPI", "Python"],
+      url: "https://hashnode.com/@marnylopez/django-vs-fastapi",
     },
     {
-      id: "react-performance-optimization",
-      title: "React Performance Optimization Techniques",
+      id: "ai-integration-web-apps",
+      title: "Integrating AI into Web Applications with LangChain",
       excerpt:
-        "Discover advanced techniques to optimize React applications, including memoization, code splitting, and bundle analysis.",
+        "Explore how to enhance web applications with AI capabilities using LangChain and LLM integration. Practical examples for health, fitness, and travel tech.",
       image: "/placeholder.svg?height=400&width=600",
       publishedAt: "2023-12-28",
-      readTime: "10 min read",
-      tags: ["React", "Performance", "Optimization"],
+      readTime: "12 min read",
+      tags: ["AI", "LangChain", "Integration"],
+      url: "https://medium.com/@marnylopez/ai-integration-langchain",
     },
     {
-      id: "building-accessible-components",
-      title: "Building Accessible React Components",
+      id: "cross-platform-development",
+      title: "Cross-Platform Development: Technologies and Best Practices",
       excerpt:
-        "A comprehensive guide to creating accessible React components that work for everyone, including ARIA patterns and testing strategies.",
+        "Analysis of cross-platform development technologies and automated development processes for SMEs. Based on academic research and industry experience.",
       image: "/placeholder.svg?height=400&width=600",
       publishedAt: "2023-12-20",
-      readTime: "7 min read",
-      tags: ["Accessibility", "React", "Web Standards"],
+      readTime: "15 min read",
+      tags: ["Cross-Platform", "Development", "Research"],
+      url: "https://dev.to/marnylopez/cross-platform-development",
     },
     {
-      id: "modern-css-techniques",
-      title: "Modern CSS Techniques for 2024",
+      id: "firebase-full-stack",
+      title: "Full-Stack Development with Firebase and React",
       excerpt:
-        "Explore the latest CSS features including container queries, cascade layers, and new color functions that are changing how we style the web.",
+        "Build complete web applications using Firebase services with React. Covers authentication, Firestore, cloud functions, and deployment strategies.",
       image: "/placeholder.svg?height=400&width=600",
       publishedAt: "2023-12-15",
       readTime: "9 min read",
-      tags: ["CSS", "Modern Web", "Frontend"],
+      tags: ["Firebase", "React", "Full-Stack"],
+      url: "https://hashnode.com/@marnylopez/firebase-react-fullstack",
     },
   ]
 
   const allProjects = [
     {
-      title: "E-commerce Platform",
-      description: "A full-stack e-commerce platform built with Next.js, Stripe, and Prisma.",
-      tags: ["Next.js", "TypeScript", "Prisma", "Stripe"],
+      title: "MyndsIT Platform",
+      description: "Comprehensive SaaS platform for delivering cutting-edge web and mobile solutions to clients.",
+      tags: ["React", "NestJS", "PostgreSQL", "TypeScript"],
       image: "/placeholder.svg?height=300&width=400",
-      demoUrl: "https://example.com",
-      repoUrl: "https://github.com",
+      demoUrl: "https://myndsit.com",
+      repoUrl: "https://github.com/iMrLopez",
     },
     {
-      title: "Task Management App",
-      description: "A collaborative task management application with real-time updates.",
-      tags: ["React", "Firebase", "Tailwind CSS", "Redux"],
+      title: "Music Distribution System",
+      description: "Advanced music distribution technology platform built with Django and React for Tone.",
+      tags: ["Django", "React", "PostgreSQL", "Python"],
       image: "/placeholder.svg?height=300&width=400",
       demoUrl: "https://example.com",
-      repoUrl: "https://github.com",
+      repoUrl: "https://github.com/iMrLopez",
     },
     {
-      title: "AI Content Generator",
-      description: "An AI-powered content generation tool using OpenAI's GPT models.",
-      tags: ["Next.js", "OpenAI API", "Node.js", "MongoDB"],
+      title: "Helix & Ion Projects",
+      description:
+        "Performance-optimized calculation systems with Vue.js frontend and Node.js backend for Riparian LLC.",
+      tags: ["Vue.js", "Node.js", "Express", "TypeScript"],
       image: "/placeholder.svg?height=300&width=400",
       demoUrl: "https://example.com",
-      repoUrl: "https://github.com",
+      repoUrl: "https://github.com/iMrLopez",
     },
     {
-      title: "Fitness Tracker",
-      description: "A mobile-first fitness tracking application with data visualization.",
-      tags: ["React Native", "TypeScript", "D3.js", "Firebase"],
+      title: "AKC Internal Applications",
+      description: "REGIS, BRETT and JPM applications with Python microservices and Angular/React frontends.",
+      tags: ["Python", "Angular", "React", "MongoDB"],
       image: "/placeholder.svg?height=300&width=400",
       demoUrl: "https://example.com",
-      repoUrl: "https://github.com",
+      repoUrl: "https://github.com/iMrLopez",
     },
     {
-      title: "Weather Dashboard",
-      description: "A beautiful weather dashboard with forecasts and historical data.",
-      tags: ["React", "Weather API", "Chart.js", "Styled Components"],
+      title: "Cross-Platform Mobile App",
+      description: "React Native application with Expo showcasing cross-platform development best practices.",
+      tags: ["React Native", "Expo", "TypeScript", "Firebase"],
       image: "/placeholder.svg?height=300&width=400",
       demoUrl: "https://example.com",
-      repoUrl: "https://github.com",
+      repoUrl: "https://github.com/iMrLopez",
     },
     {
-      title: "Portfolio Website",
-      description: "This portfolio website built with Next.js and Tailwind CSS.",
-      tags: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"],
+      title: "AI-Enhanced Web Application",
+      description: "Web application integrating LangChain and LLM for health and fitness technology solutions.",
+      tags: ["React", "LangChain", "Python", "AI"],
       image: "/placeholder.svg?height=300&width=400",
       demoUrl: "https://example.com",
-      repoUrl: "https://github.com",
+      repoUrl: "https://github.com/iMrLopez",
     },
     {
-      title: "Social Media Dashboard",
-      description: "Analytics dashboard for social media management with real-time metrics.",
-      tags: ["Vue.js", "Chart.js", "Express", "PostgreSQL"],
+      title: "Billing Automation System",
+      description: "Automated billing processes system built during DXC Technology tenure with RPA integration.",
+      tags: ["RPA", "Process Automation", "SCRUM", "Leadership"],
       image: "/placeholder.svg?height=300&width=400",
       demoUrl: "https://example.com",
-      repoUrl: "https://github.com",
+      repoUrl: "https://github.com/iMrLopez",
     },
     {
-      title: "Recipe Finder App",
-      description: "Discover and save recipes with ingredient-based search functionality.",
-      tags: ["React", "Recipe API", "Local Storage", "CSS Grid"],
+      title: "Core Banking Application",
+      description: "Security subsystem for core banking application at Fiserv with RPGLE and CLLE technologies.",
+      tags: ["RPGLE", "CLLE", "Banking", "Security"],
       image: "/placeholder.svg?height=300&width=400",
       demoUrl: "https://example.com",
-      repoUrl: "https://github.com",
+      repoUrl: "https://github.com/iMrLopez",
     },
     {
       title: "Crypto Tracker",
@@ -310,7 +317,7 @@ export default function Portfolio() {
       tags: ["React", "CoinGecko API", "Chart.js", "Redux"],
       image: "/placeholder.svg?height=300&width=400",
       demoUrl: "https://example.com",
-      repoUrl: "https://github.com",
+      repoUrl: "https://github.com/iMrLopez",
     },
     {
       title: "Blog CMS",
@@ -318,7 +325,7 @@ export default function Portfolio() {
       tags: ["Next.js", "MDX", "Prisma", "NextAuth"],
       image: "/placeholder.svg?height=300&width=400",
       demoUrl: "https://example.com",
-      repoUrl: "https://github.com",
+      repoUrl: "https://github.com/iMrLopez",
     },
     {
       title: "Music Player",
@@ -326,7 +333,7 @@ export default function Portfolio() {
       tags: ["JavaScript", "Web Audio API", "Canvas", "Local Storage"],
       image: "/placeholder.svg?height=300&width=400",
       demoUrl: "https://example.com",
-      repoUrl: "https://github.com",
+      repoUrl: "https://github.com/iMrLopez",
     },
     {
       title: "Chat Application",
@@ -334,7 +341,7 @@ export default function Portfolio() {
       tags: ["Socket.io", "Node.js", "React", "MongoDB"],
       image: "/placeholder.svg?height=300&width=400",
       demoUrl: "https://example.com",
-      repoUrl: "https://github.com",
+      repoUrl: "https://github.com/iMrLopez",
     },
   ]
 
@@ -373,23 +380,24 @@ export default function Portfolio() {
           <div className="space-y-8">
             {/* Avatar */}
             <div className="flex justify-center">
-              <Avatar src="/placeholder.svg?height=200&width=200" alt="Shine Kyaw Kyaw Aung" />
+              <Avatar src="/placeholder.svg?height=200&width=200" alt="Marny Lopez" />
             </div>
 
             <div className="inline-block">
               <div className="relative px-3 py-1 text-sm font-medium rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-4">
-                <span className="relative z-10">Software Engineer & Creative Developer</span>
+                <span className="relative z-10">Software Engineer | Web & Mobile Full Stack Development</span>
                 <span className="absolute inset-0 rounded-full bg-gradient-to-r from-brand-500/20 to-accent-500/20 animate-pulse"></span>
               </div>
             </div>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
               <span className="block">Hi, I'm</span>
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-brand-400 via-secondary-400 to-accent-500 bg-300% animate-gradient-shift">
-                Shine Kyaw Kyaw Aung
+                Marny Lopez
               </span>
             </h1>
             <p className="text-xl text-neutral-400 max-w-[600px]">
-              I craft exceptional digital experiences with code, creativity, and a passion for innovation.
+              I specialize in building robust, scalable applications across the stack — from intuitive mobile
+              experiences to resilient backend systems.
             </p>
             <div className="flex flex-wrap gap-4 pt-4 justify-center">
               <Button className="relative overflow-hidden group bg-gradient-to-r from-brand-600 to-brand-700 hover:from-brand-700 hover:to-brand-800 border-0 shadow-lg shadow-brand-500/25">
@@ -406,7 +414,7 @@ export default function Portfolio() {
               </Button>
             </div>
             <div className="flex gap-4 pt-4 justify-center">
-              <Link href="https://github.com" target="_blank" rel="noopener noreferrer">
+              <Link href="https://github.com/iMrLopez" target="_blank" rel="noopener noreferrer">
                 <Button
                   variant="ghost"
                   size="icon"
@@ -416,7 +424,7 @@ export default function Portfolio() {
                   <span className="sr-only">GitHub</span>
                 </Button>
               </Link>
-              <Link href="https://www.linkedin.com/in/shinekyawkyawaung/" target="_blank" rel="noopener noreferrer">
+              <Link href="https://www.linkedin.com/in/marnylopez/" target="_blank" rel="noopener noreferrer">
                 <Button
                   variant="ghost"
                   size="icon"
@@ -436,7 +444,7 @@ export default function Portfolio() {
                   <span className="sr-only">Twitter</span>
                 </Button>
               </Link>
-              <Link href="mailto:hello@example.com">
+              <Link href="mailto:me@marnylopez.com">
                 <Button
                   variant="ghost"
                   size="icon"
@@ -476,35 +484,38 @@ export default function Portfolio() {
                 </div>
 
                 <p className="text-lg text-neutral-300">
-                  I'm a passionate software engineer with experience building web applications and digital products. I
-                  specialize in frontend development with React and Next.js, but I'm also comfortable working with
-                  backend technologies.
+                  I specialize in building robust, scalable applications across the stack — from intuitive mobile
+                  experiences to resilient backend systems. My tech toolbox includes Frontend technologies like React
+                  (Native & Web), Expo, TypeScript, Tailwind, ShadCN, and Backend with NestJS, Django, FastAPI, Firebase
+                  Functions, GraphQL, and REST APIs.
                 </p>
                 <p className="text-lg text-neutral-300 mt-4">
-                  My journey in tech started with a strong foundation in software development. I've worked with various
-                  companies to create intuitive, performant, and accessible digital experiences.
+                  I enjoy crafting clean, maintainable codebases, optimizing developer experience, and exploring how AI
+                  can enhance real-world applications — especially in health, fitness, energy, and travel tech. I am the
+                  founder of MyndsIT, where I deliver cutting-edge solutions to clients and develop my own applications
+                  and SaaS products.
                 </p>
                 <p className="text-lg text-neutral-300 mt-4">
-                  When I'm not coding, you can find me exploring new technologies, contributing to open-source projects,
-                  and staying up-to-date with the latest industry trends.
+                  When I'm not coding, I'm exploring new technologies, working on AI integration projects, and staying
+                  up-to-date with the latest industry trends in web and mobile development.
                 </p>
 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
                   <div className="space-y-1">
                     <div className="text-sm text-neutral-500">Name</div>
-                    <div className="font-medium">Shine Kyaw Kyaw Aung</div>
+                    <div className="font-medium">Marny Lopez</div>
                   </div>
                   <div className="space-y-1">
                     <div className="text-sm text-neutral-500">Email</div>
-                    <div className="font-medium">hello@example.com</div>
+                    <div className="font-medium">me@marnylopez.com</div>
                   </div>
                   <div className="space-y-1">
                     <div className="text-sm text-neutral-500">Location</div>
-                    <div className="font-medium">Myanmar</div>
+                    <div className="font-medium">San José, Costa Rica</div>
                   </div>
                   <div className="space-y-1">
                     <div className="text-sm text-neutral-500">Experience</div>
-                    <div className="font-medium">5+ Years</div>
+                    <div className="font-medium">10+ Years</div>
                   </div>
                 </div>
 
@@ -584,7 +595,7 @@ export default function Portfolio() {
         <div className="container relative z-10">
           <SectionHeading title="Featured Projects" subtitle="Some of my recent work" />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
             {projectsToShow.map((project, index) => (
               <ProjectCardSmall key={index} {...project} />
             ))}
@@ -651,7 +662,7 @@ export default function Portfolio() {
         <div className="container relative z-10">
           <SectionHeading title="Get In Touch" subtitle="Let's work together" />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mt-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start mt-16">
             <GlassmorphicCard>
               <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
               <div className="space-y-6">
@@ -661,7 +672,7 @@ export default function Portfolio() {
                   </div>
                   <div>
                     <div className="text-sm text-neutral-500">Email</div>
-                    <div className="font-medium">hello@example.com</div>
+                    <div className="font-medium">me@marnylopez.com</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -670,7 +681,7 @@ export default function Portfolio() {
                   </div>
                   <div>
                     <div className="text-sm text-neutral-500">LinkedIn</div>
-                    <div className="font-medium">linkedin.com/in/shinekyawkyawaung</div>
+                    <div className="font-medium">linkedin.com/in/marnylopez</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -679,8 +690,39 @@ export default function Portfolio() {
                   </div>
                   <div>
                     <div className="text-sm text-neutral-500">GitHub</div>
-                    <div className="font-medium">github.com/shinekyawkyawaung</div>
+                    <div className="font-medium">github.com/iMrLopez</div>
                   </div>
+                </div>
+                {/* YouTube and Instagram side by side */}
+                <div className="grid grid-cols-2 gap-4">
+                  <Link
+                    href="https://youtube.com/@iMrLopez"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 p-3 rounded-lg bg-neutral-700/30 hover:bg-neutral-700/50 transition-colors group"
+                  >
+                    <div className="w-8 h-8 rounded-full bg-neutral-800 flex items-center justify-center group-hover:bg-brand-500/20 transition-colors">
+                      <Youtube className="h-4 w-4 text-brand-400" />
+                    </div>
+                    <div className="min-w-0">
+                      <div className="text-xs text-neutral-500">YouTube</div>
+                      <div className="font-medium text-sm truncate">@iMrLopez</div>
+                    </div>
+                  </Link>
+                  <Link
+                    href="https://instagram.com/iimrlopez"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 p-3 rounded-lg bg-neutral-700/30 hover:bg-neutral-700/50 transition-colors group"
+                  >
+                    <div className="w-8 h-8 rounded-full bg-neutral-800 flex items-center justify-center group-hover:bg-brand-500/20 transition-colors">
+                      <Instagram className="h-4 w-4 text-brand-400" />
+                    </div>
+                    <div className="min-w-0">
+                      <div className="text-xs text-neutral-500">Instagram</div>
+                      <div className="font-medium text-sm truncate">@iimrlopez</div>
+                    </div>
+                  </Link>
                 </div>
               </div>
 
@@ -703,15 +745,15 @@ export default function Portfolio() {
         <div className="container flex flex-col md:flex-row justify-between items-center gap-6">
           <div>
             <Link href="/" className="font-bold text-xl">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-brand-400 to-accent-500">Shine</span>
-              <span className="text-white">KKA</span>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-brand-400 to-accent-500">Marny</span>
+              <span className="text-white">Lopez</span>
             </Link>
             <p className="text-sm text-neutral-500 mt-2">
-              © {new Date().getFullYear()} Shine Kyaw Kyaw Aung. All rights reserved.
+              © {new Date().getFullYear()} Marny Lopez. All rights reserved.
             </p>
           </div>
           <div className="flex gap-4">
-            <Link href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <Link href="https://github.com/iMrLopez" target="_blank" rel="noopener noreferrer">
               <Button
                 variant="ghost"
                 size="icon"
@@ -721,7 +763,7 @@ export default function Portfolio() {
                 <span className="sr-only">GitHub</span>
               </Button>
             </Link>
-            <Link href="https://www.linkedin.com/in/shinekyawkyawaung/" target="_blank" rel="noopener noreferrer">
+            <Link href="https://www.linkedin.com/in/marnylopez/" target="_blank" rel="noopener noreferrer">
               <Button
                 variant="ghost"
                 size="icon"
@@ -741,7 +783,7 @@ export default function Portfolio() {
                 <span className="sr-only">Twitter</span>
               </Button>
             </Link>
-            <Link href="mailto:hello@example.com">
+            <Link href="mailto:me@marnylopez.com">
               <Button
                 variant="ghost"
                 size="icon"
