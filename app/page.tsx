@@ -13,22 +13,21 @@ import { MouseFollower } from "@/components/mouse-follower"
 import { ScrollProgress } from "@/components/scroll-progress"
 import { SectionHeading } from "@/components/section-heading"
 import { GlassmorphicCard } from "@/components/glassmorphic-card"
-import { BlogPostCard } from "@/components/blog-post-card"
+import { BlogSlider } from "@/components/blog-slider"
 import { CourseCard } from "@/components/course-card"
 import { VideoCard } from "@/components/video-card"
 import { ClientReviews } from "@/components/client-reviews"
 import { Pagination } from "@/components/pagination"
 import { CodeBackground } from "@/components/code-background"
 import { Avatar } from "@/components/avatar"
-import { ProjectCard } from "@/components/project-card"
+import { ProjectCardSmall } from "@/components/project-card-small"
 
 export default function Portfolio() {
-  const [coursesPage, setCoursesPage] = useState(1)
-  const [videosPage, setVideosPage] = useState(1)
-  const [blogPage, setBlogPage] = useState(1)
+  const [contentPage, setContentPage] = useState(1)
   const [projectsPage, setProjectsPage] = useState(1)
 
   const itemsPerPage = 2
+  const projectsPerPage = 8 // 4x2 grid per page
 
   // Sample data arrays
   const allCourses = [
@@ -44,6 +43,7 @@ export default function Portfolio() {
       level: "Intermediate",
       url: "https://example.com/course",
       platform: "Udemy",
+      type: "course" as const,
     },
     {
       title: "TypeScript for React Developers",
@@ -57,6 +57,7 @@ export default function Portfolio() {
       level: "Beginner",
       url: "https://example.com/course",
       platform: "Skillshare",
+      type: "course" as const,
     },
     {
       title: "Modern CSS & Tailwind CSS",
@@ -70,6 +71,7 @@ export default function Portfolio() {
       level: "Beginner",
       url: "https://example.com/course",
       platform: "Coursera",
+      type: "course" as const,
     },
     {
       title: "Advanced JavaScript Patterns",
@@ -83,6 +85,7 @@ export default function Portfolio() {
       level: "Advanced",
       url: "https://example.com/course",
       platform: "Udemy",
+      type: "course" as const,
     },
   ]
 
@@ -99,6 +102,7 @@ export default function Portfolio() {
       url: "https://youtube.com/watch?v=example",
       tags: ["Next.js", "React", "Tutorial"],
       platform: "youtube" as const,
+      type: "video" as const,
     },
     {
       title: "Building a Full-Stack App with React & Node.js",
@@ -112,6 +116,7 @@ export default function Portfolio() {
       url: "https://youtube.com/watch?v=example",
       tags: ["React", "Node.js", "Full-Stack"],
       platform: "youtube" as const,
+      type: "video" as const,
     },
     {
       title: "CSS Grid vs Flexbox - When to Use What",
@@ -125,6 +130,7 @@ export default function Portfolio() {
       url: "https://youtube.com/watch?v=example",
       tags: ["CSS", "Layout", "Web Design"],
       platform: "youtube" as const,
+      type: "video" as const,
     },
     {
       title: "Quick React Tips",
@@ -138,6 +144,7 @@ export default function Portfolio() {
       url: "https://instagram.com/reel/example",
       tags: ["React", "Tips", "Quick"],
       platform: "instagram" as const,
+      type: "video" as const,
     },
     {
       title: "React Performance Optimization Tips",
@@ -151,6 +158,7 @@ export default function Portfolio() {
       url: "https://youtube.com/watch?v=example",
       tags: ["React", "Performance", "Optimization"],
       platform: "youtube" as const,
+      type: "video" as const,
     },
     {
       title: "TypeScript Generics Explained Simply",
@@ -164,6 +172,7 @@ export default function Portfolio() {
       url: "https://youtube.com/watch?v=example",
       tags: ["TypeScript", "Generics", "Tutorial"],
       platform: "youtube" as const,
+      type: "video" as const,
     },
   ]
 
@@ -235,7 +244,7 @@ export default function Portfolio() {
       title: "E-commerce Platform",
       description: "A full-stack e-commerce platform built with Next.js, Stripe, and Prisma.",
       tags: ["Next.js", "TypeScript", "Prisma", "Stripe"],
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/placeholder.svg?height=300&width=400",
       demoUrl: "https://example.com",
       repoUrl: "https://github.com",
     },
@@ -243,7 +252,7 @@ export default function Portfolio() {
       title: "Task Management App",
       description: "A collaborative task management application with real-time updates.",
       tags: ["React", "Firebase", "Tailwind CSS", "Redux"],
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/placeholder.svg?height=300&width=400",
       demoUrl: "https://example.com",
       repoUrl: "https://github.com",
     },
@@ -251,7 +260,7 @@ export default function Portfolio() {
       title: "AI Content Generator",
       description: "An AI-powered content generation tool using OpenAI's GPT models.",
       tags: ["Next.js", "OpenAI API", "Node.js", "MongoDB"],
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/placeholder.svg?height=300&width=400",
       demoUrl: "https://example.com",
       repoUrl: "https://github.com",
     },
@@ -259,7 +268,7 @@ export default function Portfolio() {
       title: "Fitness Tracker",
       description: "A mobile-first fitness tracking application with data visualization.",
       tags: ["React Native", "TypeScript", "D3.js", "Firebase"],
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/placeholder.svg?height=300&width=400",
       demoUrl: "https://example.com",
       repoUrl: "https://github.com",
     },
@@ -267,7 +276,7 @@ export default function Portfolio() {
       title: "Weather Dashboard",
       description: "A beautiful weather dashboard with forecasts and historical data.",
       tags: ["React", "Weather API", "Chart.js", "Styled Components"],
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/placeholder.svg?height=300&width=400",
       demoUrl: "https://example.com",
       repoUrl: "https://github.com",
     },
@@ -275,27 +284,74 @@ export default function Portfolio() {
       title: "Portfolio Website",
       description: "This portfolio website built with Next.js and Tailwind CSS.",
       tags: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"],
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/placeholder.svg?height=300&width=400",
+      demoUrl: "https://example.com",
+      repoUrl: "https://github.com",
+    },
+    {
+      title: "Social Media Dashboard",
+      description: "Analytics dashboard for social media management with real-time metrics.",
+      tags: ["Vue.js", "Chart.js", "Express", "PostgreSQL"],
+      image: "/placeholder.svg?height=300&width=400",
+      demoUrl: "https://example.com",
+      repoUrl: "https://github.com",
+    },
+    {
+      title: "Recipe Finder App",
+      description: "Discover and save recipes with ingredient-based search functionality.",
+      tags: ["React", "Recipe API", "Local Storage", "CSS Grid"],
+      image: "/placeholder.svg?height=300&width=400",
+      demoUrl: "https://example.com",
+      repoUrl: "https://github.com",
+    },
+    {
+      title: "Crypto Tracker",
+      description: "Real-time cryptocurrency price tracking with portfolio management.",
+      tags: ["React", "CoinGecko API", "Chart.js", "Redux"],
+      image: "/placeholder.svg?height=300&width=400",
+      demoUrl: "https://example.com",
+      repoUrl: "https://github.com",
+    },
+    {
+      title: "Blog CMS",
+      description: "Content management system for bloggers with markdown support.",
+      tags: ["Next.js", "MDX", "Prisma", "NextAuth"],
+      image: "/placeholder.svg?height=300&width=400",
+      demoUrl: "https://example.com",
+      repoUrl: "https://github.com",
+    },
+    {
+      title: "Music Player",
+      description: "Web-based music player with playlist management and audio visualization.",
+      tags: ["JavaScript", "Web Audio API", "Canvas", "Local Storage"],
+      image: "/placeholder.svg?height=300&width=400",
+      demoUrl: "https://example.com",
+      repoUrl: "https://github.com",
+    },
+    {
+      title: "Chat Application",
+      description: "Real-time chat application with rooms and file sharing capabilities.",
+      tags: ["Socket.io", "Node.js", "React", "MongoDB"],
+      image: "/placeholder.svg?height=300&width=400",
       demoUrl: "https://example.com",
       repoUrl: "https://github.com",
     },
   ]
 
+  // Combine courses and videos into one array
+  const allContent = [...allCourses, ...allVideos]
+
   // Pagination logic
-  const paginateItems = (items: any[], page: number) => {
-    const startIndex = (page - 1) * itemsPerPage
-    return items.slice(startIndex, startIndex + itemsPerPage)
+  const paginateItems = (items: any[], page: number, perPage: number) => {
+    const startIndex = (page - 1) * perPage
+    return items.slice(startIndex, startIndex + perPage)
   }
 
-  const coursesToShow = paginateItems(allCourses, coursesPage)
-  const videosToShow = paginateItems(allVideos, videosPage)
-  const blogPostsToShow = paginateItems(allBlogPosts, blogPage)
-  const projectsToShow = paginateItems(allProjects, projectsPage)
+  const contentToShow = paginateItems(allContent, contentPage, itemsPerPage)
+  const projectsToShow = paginateItems(allProjects, projectsPage, projectsPerPage)
 
-  const totalCoursesPages = Math.ceil(allCourses.length / itemsPerPage)
-  const totalVideosPages = Math.ceil(allVideos.length / itemsPerPage)
-  const totalBlogPages = Math.ceil(allBlogPosts.length / itemsPerPage)
-  const totalProjectsPages = Math.ceil(allProjects.length / itemsPerPage)
+  const totalContentPages = Math.ceil(allContent.length / itemsPerPage)
+  const totalProjectsPages = Math.ceil(allProjects.length / projectsPerPage)
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-neutral-900 via-neutral-900 to-black text-white overflow-hidden">
@@ -498,28 +554,22 @@ export default function Portfolio() {
         </div>
 
         <div className="container relative z-10">
-          <SectionHeading title="My Courses & Videos" subtitle="Learn with me" />
+          <SectionHeading title="Courses & Content" subtitle="Learn with me through courses and videos" />
 
-          {/* Courses */}
           <div className="mt-16">
-            <h3 className="text-2xl font-bold mb-8 text-center">Featured Courses</h3>
+            {/* Combined Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {coursesToShow.map((course, index) => (
-                <CourseCard key={index} {...course} />
-              ))}
+              {contentToShow.map((item, index) => {
+                if (item.type === "course") {
+                  return <CourseCard key={`content-${index}`} {...item} />
+                } else {
+                  return <VideoCard key={`content-${index}`} {...item} />
+                }
+              })}
             </div>
-            <Pagination currentPage={coursesPage} totalPages={totalCoursesPages} onPageChange={setCoursesPage} />
-          </div>
 
-          {/* Videos */}
-          <div className="mt-12">
-            <h3 className="text-2xl font-bold mb-8 text-center">Latest YouTube Videos & Instagram Reels</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {videosToShow.map((video, index) => (
-                <VideoCard key={index} {...video} />
-              ))}
-            </div>
-            <Pagination currentPage={videosPage} totalPages={totalVideosPages} onPageChange={setVideosPage} />
+            {/* Single Unified Pagination */}
+            <Pagination currentPage={contentPage} totalPages={totalContentPages} onPageChange={setContentPage} />
           </div>
         </div>
       </section>
@@ -534,9 +584,9 @@ export default function Portfolio() {
         <div className="container relative z-10">
           <SectionHeading title="Featured Projects" subtitle="Some of my recent work" />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
             {projectsToShow.map((project, index) => (
-              <ProjectCard key={index} {...project} />
+              <ProjectCardSmall key={index} {...project} />
             ))}
           </div>
           <Pagination currentPage={projectsPage} totalPages={totalProjectsPages} onPageChange={setProjectsPage} />
@@ -553,12 +603,9 @@ export default function Portfolio() {
         <div className="container relative z-10">
           <SectionHeading title="Latest Blog Posts" subtitle="Thoughts and insights" />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
-            {blogPostsToShow.map((post, index) => (
-              <BlogPostCard key={index} {...post} />
-            ))}
+          <div className="mt-16 max-w-6xl mx-auto">
+            <BlogSlider posts={allBlogPosts} />
           </div>
-          <Pagination currentPage={blogPage} totalPages={totalBlogPages} onPageChange={setBlogPage} />
         </div>
       </section>
 
