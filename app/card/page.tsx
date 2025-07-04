@@ -73,7 +73,7 @@ export default function VCard() {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-neutral-900 via-neutral-900 to-black text-white flex items-center justify-center p-4 relative overflow-hidden">
+    <div className="h-screen bg-gradient-to-b from-neutral-900 via-neutral-900 to-black text-white flex items-center justify-center p-3 relative overflow-hidden">
       {/* Code Background Animation */}
       <CodeBackground />
 
@@ -85,45 +85,45 @@ export default function VCard() {
       </div>
 
       {/* VCard */}
-      <div className="relative z-10 w-full max-w-2xl">
-        <div className="bg-zinc-800/50 backdrop-blur-sm border border-zinc-700/50 rounded-2xl p-8 shadow-2xl">
+      <div className="relative z-10 w-full max-w-2xl h-full max-h-[95vh] overflow-y-auto">
+        <div className="bg-zinc-800/50 backdrop-blur-sm border border-zinc-700/50 rounded-2xl p-4 shadow-2xl h-full flex flex-col">
           {/* Header */}
-          <div className="text-center mb-8">
-            <div className="flex justify-center mb-6">
-              <Avatar src="/placeholder.svg?height=120&width=120" alt="Marny Lopez" size={120} />
+          <div className="text-center mb-4 flex-shrink-0">
+            <div className="flex justify-center mb-3">
+              <Avatar src="/placeholder.svg?height=80&width=80" alt="Marny Lopez" size={80} />
             </div>
 
-            <h1 className="text-3xl font-bold mb-2">
+            <h1 className="text-2xl font-bold mb-1">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-purple-600">
                 Marny Lopez
               </span>
             </h1>
 
-            <p className="text-lg text-zinc-300 mb-2">Senior Full Stack Engineer</p>
-            <p className="text-sm text-zinc-400">Founder & CEO at MyndsIT</p>
+            <p className="text-base text-zinc-300 mb-1">Senior Full Stack Engineer</p>
+            <p className="text-xs text-zinc-400">Founder & CEO at MyndsIT</p>
 
-            <div className="flex items-center justify-center gap-2 mt-4">
-              <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse"></div>
-              <span className="text-sm font-medium text-green-400">Available for work</span>
+            <div className="flex items-center justify-center gap-2 mt-2">
+              <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+              <span className="text-xs font-medium text-green-400">Available for work</span>
             </div>
           </div>
 
           {/* Contact Information */}
-          <div className="space-y-4 mb-8">
-            <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-              <Mail className="h-5 w-5 text-purple-400" />
+          <div className="mb-4 flex-shrink-0">
+            <h3 className="text-sm font-semibold text-white mb-2 flex items-center gap-2">
+              <Mail className="h-4 w-4 text-purple-400" />
               Contact Information
             </h3>
 
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 gap-2">
               <Link
                 href="mailto:me@marnylopez.com"
-                className="flex items-center gap-3 p-3 rounded-lg bg-zinc-700/30 hover:bg-zinc-700/50 transition-colors group"
+                className="flex items-center gap-2 p-2 rounded-lg bg-zinc-700/30 hover:bg-zinc-700/50 transition-colors group"
               >
-                <Mail className="h-4 w-4 text-purple-400" />
+                <Mail className="h-3 w-3 text-purple-400 flex-shrink-0" />
                 <div className="min-w-0">
                   <div className="text-xs text-zinc-500">Email</div>
-                  <div className="text-sm font-medium truncate">me@marnylopez.com</div>
+                  <div className="text-xs font-medium truncate">me@marnylopez.com</div>
                 </div>
               </Link>
 
@@ -131,20 +131,20 @@ export default function VCard() {
                 href="https://wa.me/50660453526"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 p-3 rounded-lg bg-zinc-700/30 hover:bg-zinc-700/50 transition-colors group"
+                className="flex items-center gap-2 p-2 rounded-lg bg-zinc-700/30 hover:bg-zinc-700/50 transition-colors group"
               >
-                <MessageCircle className="h-4 w-4 text-green-400" />
+                <MessageCircle className="h-3 w-3 text-green-400 flex-shrink-0" />
                 <div className="min-w-0">
                   <div className="text-xs text-zinc-500">WhatsApp</div>
-                  <div className="text-sm font-medium truncate">+506 6045 3526</div>
+                  <div className="text-xs font-medium truncate">+506 6045 3526</div>
                 </div>
               </Link>
 
-              <div className="flex items-center gap-3 p-3 rounded-lg bg-zinc-700/30">
-                <MapPin className="h-4 w-4 text-purple-400" />
+              <div className="flex items-center gap-2 p-2 rounded-lg bg-zinc-700/30">
+                <MapPin className="h-3 w-3 text-purple-400 flex-shrink-0" />
                 <div className="min-w-0">
                   <div className="text-xs text-zinc-500">Location</div>
-                  <div className="text-sm font-medium">San José, Costa Rica</div>
+                  <div className="text-xs font-medium">San José, Costa Rica</div>
                 </div>
               </div>
 
@@ -152,72 +152,72 @@ export default function VCard() {
                 href="https://marnylopez.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 p-3 rounded-lg bg-zinc-700/30 hover:bg-zinc-700/50 transition-colors group"
+                className="flex items-center gap-2 p-2 rounded-lg bg-zinc-700/30 hover:bg-zinc-700/50 transition-colors group"
               >
-                <Globe className="h-4 w-4 text-purple-400" />
+                <Globe className="h-3 w-3 text-purple-400 flex-shrink-0" />
                 <div className="min-w-0">
                   <div className="text-xs text-zinc-500">Website</div>
-                  <div className="text-sm font-medium truncate">marnylopez.com</div>
+                  <div className="text-xs font-medium truncate">marnylopez.com</div>
                 </div>
               </Link>
             </div>
           </div>
 
           {/* Social Media */}
-          <div className="mb-8">
-            <h3 className="text-lg font-semibold text-white mb-4">Social Media</h3>
-            <div className="grid grid-cols-2 gap-3">
+          <div className="mb-4 flex-shrink-0">
+            <h3 className="text-sm font-semibold text-white mb-2">Social Media</h3>
+            <div className="grid grid-cols-4 gap-2">
               <Link
                 href="https://github.com/iMrLopez"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 p-3 rounded-lg bg-zinc-700/30 hover:bg-zinc-700/50 transition-colors group"
+                className="flex flex-col items-center gap-1 p-2 rounded-lg bg-zinc-700/30 hover:bg-zinc-700/50 transition-colors group"
               >
                 <Github className="h-4 w-4 text-purple-400" />
-                <span className="text-sm">GitHub</span>
+                <span className="text-xs">GitHub</span>
               </Link>
 
               <Link
                 href="https://www.linkedin.com/in/marnylopez/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 p-3 rounded-lg bg-zinc-700/30 hover:bg-zinc-700/50 transition-colors group"
+                className="flex flex-col items-center gap-1 p-2 rounded-lg bg-zinc-700/30 hover:bg-zinc-700/50 transition-colors group"
               >
                 <Linkedin className="h-4 w-4 text-purple-400" />
-                <span className="text-sm">LinkedIn</span>
+                <span className="text-xs">LinkedIn</span>
               </Link>
 
               <Link
                 href="https://youtube.com/@iMrLopez"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 p-3 rounded-lg bg-zinc-700/30 hover:bg-zinc-700/50 transition-colors group"
+                className="flex flex-col items-center gap-1 p-2 rounded-lg bg-zinc-700/30 hover:bg-zinc-700/50 transition-colors group"
               >
                 <Youtube className="h-4 w-4 text-purple-400" />
-                <span className="text-sm">YouTube</span>
+                <span className="text-xs">YouTube</span>
               </Link>
 
               <Link
                 href="https://instagram.com/iimrlopez"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 p-3 rounded-lg bg-zinc-700/30 hover:bg-zinc-700/50 transition-colors group"
+                className="flex flex-col items-center gap-1 p-2 rounded-lg bg-zinc-700/30 hover:bg-zinc-700/50 transition-colors group"
               >
                 <Instagram className="h-4 w-4 text-purple-400" />
-                <span className="text-sm">Instagram</span>
+                <span className="text-xs">Instagram</span>
               </Link>
             </div>
           </div>
 
           {/* Skills */}
-          <div className="mb-8">
-            <h3 className="text-lg font-semibold text-white mb-4">Technical Skills</h3>
-            <div className="flex flex-wrap gap-2">
+          <div className="mb-4 flex-shrink-0">
+            <h3 className="text-sm font-semibold text-white mb-2">Technical Skills</h3>
+            <div className="flex flex-wrap gap-1">
               {skills.map((skill, index) => (
                 <Badge
                   key={index}
                   variant="secondary"
-                  className="bg-zinc-700/50 text-zinc-300 hover:bg-purple-500/20 hover:text-purple-300 transition-colors text-xs"
+                  className="bg-zinc-700/50 text-zinc-300 hover:bg-purple-500/20 hover:text-purple-300 transition-colors text-xs px-2 py-0.5"
                 >
                   {skill}
                 </Badge>
@@ -226,12 +226,12 @@ export default function VCard() {
           </div>
 
           {/* Services & Experience */}
-          <div className="mb-8">
-            <h3 className="text-lg font-semibold text-white mb-4">Services & Experience</h3>
-            <div className="grid grid-cols-2 gap-x-4 gap-y-2">
+          <div className="mb-4 flex-1 min-h-0">
+            <h3 className="text-sm font-semibold text-white mb-2">Services & Experience</h3>
+            <div className="grid grid-cols-2 gap-x-3 gap-y-1">
               {servicesAndExperience.map((item, index) => (
-                <div key={index} className="flex items-center gap-2 text-sm text-zinc-300">
-                  <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex-shrink-0"></div>
+                <div key={index} className="flex items-center gap-2 text-xs text-zinc-300">
+                  <div className="w-1 h-1 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex-shrink-0"></div>
                   <span className="truncate">{item}</span>
                 </div>
               ))}
@@ -239,20 +239,20 @@ export default function VCard() {
           </div>
 
           {/* Action Buttons */}
-          <div className="space-y-3 pt-6 border-t border-zinc-700/50">
+          <div className="space-y-2 pt-3 border-t border-zinc-700/50 flex-shrink-0">
             <Link href="/#contact">
-              <Button className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white shadow-lg shadow-purple-500/25">
+              <Button className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white shadow-lg shadow-purple-500/25 h-8 text-sm">
                 Contact Me
               </Button>
             </Link>
 
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 gap-2">
               <Link href="/#projects">
                 <Button
                   variant="outline"
-                  className="w-full border-zinc-600 text-zinc-300 hover:text-white hover:border-purple-500 hover:bg-purple-500/10 bg-transparent"
+                  className="w-full border-zinc-600 text-zinc-300 hover:text-white hover:border-purple-500 hover:bg-purple-500/10 bg-transparent h-8 text-sm"
                 >
-                  <Briefcase className="h-4 w-4 mr-2" />
+                  <Briefcase className="h-3 w-3 mr-1" />
                   Projects
                 </Button>
               </Link>
@@ -260,18 +260,17 @@ export default function VCard() {
               <Button
                 onClick={handleShare}
                 variant="outline"
-                className="w-full border-zinc-600 text-zinc-300 hover:text-white hover:border-purple-500 hover:bg-purple-500/10 bg-transparent"
+                className="w-full border-zinc-600 text-zinc-300 hover:text-white hover:border-purple-500 hover:bg-purple-500/10 bg-transparent h-8 text-sm"
               >
-                <Share2 className="h-4 w-4 mr-2" />
+                <Share2 className="h-3 w-3 mr-1" />
                 Share
               </Button>
             </div>
           </div>
 
           {/* Footer */}
-          <div className="text-center mt-6 pt-6 border-t border-zinc-700/50">
+          <div className="text-center mt-3 pt-3 border-t border-zinc-700/50 flex-shrink-0">
             <p className="text-xs text-zinc-500">Specializing in robust, scalable applications across the stack</p>
-            <p className="text-xs text-zinc-500 mt-1">From intuitive mobile experiences to resilient backend systems</p>
           </div>
         </div>
       </div>
