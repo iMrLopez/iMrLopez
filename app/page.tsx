@@ -20,7 +20,7 @@ import { ClientReviews } from "@/components/client-reviews"
 import { Pagination } from "@/components/pagination"
 import { CodeBackground } from "@/components/code-background"
 import { Avatar } from "@/components/avatar"
-import { ProjectSlider } from "@/components/project-slider"
+import { ProjectCard } from "@/components/project-card"
 
 export default function Portfolio() {
   const [coursesPage, setCoursesPage] = useState(1)
@@ -298,7 +298,7 @@ export default function Portfolio() {
   const totalProjectsPages = Math.ceil(allProjects.length / itemsPerPage)
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-zinc-900 via-zinc-900 to-black text-white overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-b from-neutral-900 via-neutral-900 to-black text-white overflow-hidden">
       <MouseFollower />
       <ScrollProgress />
       <FloatingNav />
@@ -308,9 +308,9 @@ export default function Portfolio() {
         <CodeBackground />
 
         <div className="absolute inset-0 z-0">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-          <div className="absolute top-40 right-10 w-72 h-72 bg-yellow-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-          <div className="absolute bottom-20 left-1/3 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+          <div className="absolute top-20 left-10 w-72 h-72 bg-brand-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+          <div className="absolute top-40 right-10 w-72 h-72 bg-accent-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+          <div className="absolute bottom-20 left-1/3 w-72 h-72 bg-secondary-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
         </div>
 
         <div className="container relative z-10 flex flex-col items-center justify-center text-center">
@@ -323,28 +323,28 @@ export default function Portfolio() {
             <div className="inline-block">
               <div className="relative px-3 py-1 text-sm font-medium rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-4">
                 <span className="relative z-10">Software Engineer & Creative Developer</span>
-                <span className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 animate-pulse"></span>
+                <span className="absolute inset-0 rounded-full bg-gradient-to-r from-brand-500/20 to-accent-500/20 animate-pulse"></span>
               </div>
             </div>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
               <span className="block">Hi, I'm</span>
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-brand-400 via-secondary-400 to-accent-500 bg-300% animate-gradient-shift">
                 Shine Kyaw Kyaw Aung
               </span>
             </h1>
-            <p className="text-xl text-zinc-400 max-w-[600px]">
+            <p className="text-xl text-neutral-400 max-w-[600px]">
               I craft exceptional digital experiences with code, creativity, and a passion for innovation.
             </p>
             <div className="flex flex-wrap gap-4 pt-4 justify-center">
-              <Button className="relative overflow-hidden group bg-gradient-to-r from-purple-500 to-pink-500 border-0">
+              <Button className="relative overflow-hidden group bg-gradient-to-r from-brand-600 to-brand-700 hover:from-brand-700 hover:to-brand-800 border-0 shadow-lg shadow-brand-500/25">
                 <span className="relative z-10 flex items-center">
                   View Projects <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </span>
-                <span className="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                <span className="absolute inset-0 bg-gradient-to-r from-brand-700 to-brand-600 opacity-0 group-hover:opacity-100 transition-opacity"></span>
               </Button>
               <Button
                 variant="outline"
-                className="border-zinc-700 text-zinc-300 hover:text-white hover:border-zinc-500 bg-transparent"
+                className="border-neutral-700 text-neutral-300 hover:text-white hover:border-brand-500 hover:bg-brand-500/10 bg-transparent"
               >
                 Contact Me
               </Button>
@@ -354,7 +354,7 @@ export default function Portfolio() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
+                  className="rounded-full bg-neutral-800/50 hover:bg-brand-500/20 hover:border-brand-500/50 text-neutral-400 hover:text-brand-300 transition-all duration-300"
                 >
                   <Github className="h-5 w-5" />
                   <span className="sr-only">GitHub</span>
@@ -364,7 +364,7 @@ export default function Portfolio() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
+                  className="rounded-full bg-neutral-800/50 hover:bg-brand-500/20 hover:border-brand-500/50 text-neutral-400 hover:text-brand-300 transition-all duration-300"
                 >
                   <Linkedin className="h-5 w-5" />
                   <span className="sr-only">LinkedIn</span>
@@ -374,7 +374,7 @@ export default function Portfolio() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
+                  className="rounded-full bg-neutral-800/50 hover:bg-brand-500/20 hover:border-brand-500/50 text-neutral-400 hover:text-brand-300 transition-all duration-300"
                 >
                   <Twitter className="h-5 w-5" />
                   <span className="sr-only">Twitter</span>
@@ -384,7 +384,7 @@ export default function Portfolio() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
+                  className="rounded-full bg-neutral-800/50 hover:bg-brand-500/20 hover:border-brand-500/50 text-neutral-400 hover:text-brand-300 transition-all duration-300"
                 >
                   <Mail className="h-5 w-5" />
                   <span className="sr-only">Email</span>
@@ -404,8 +404,8 @@ export default function Portfolio() {
       {/* About Section */}
       <section id="about" className="py-16 relative">
         <div className="absolute inset-0 z-0">
-          <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
-          <div className="absolute bottom-1/3 left-1/3 w-64 h-64 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+          <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-brand-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+          <div className="absolute bottom-1/3 left-1/3 w-64 h-64 bg-tertiary-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
         </div>
 
         <div className="container relative z-10">
@@ -415,45 +415,47 @@ export default function Portfolio() {
             <div className="max-w-4xl">
               <GlassmorphicCard>
                 <div className="flex items-center gap-2 mb-6">
-                  <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse"></div>
-                  <span className="text-sm font-medium text-green-400">Available for work</span>
+                  <div className="w-3 h-3 rounded-full bg-success-500 animate-pulse"></div>
+                  <span className="text-sm font-medium text-success-400">Available for work</span>
                 </div>
 
-                <p className="text-lg text-zinc-300">
+                <p className="text-lg text-neutral-300">
                   I'm a passionate software engineer with experience building web applications and digital products. I
                   specialize in frontend development with React and Next.js, but I'm also comfortable working with
                   backend technologies.
                 </p>
-                <p className="text-lg text-zinc-300 mt-4">
+                <p className="text-lg text-neutral-300 mt-4">
                   My journey in tech started with a strong foundation in software development. I've worked with various
                   companies to create intuitive, performant, and accessible digital experiences.
                 </p>
-                <p className="text-lg text-zinc-300 mt-4">
+                <p className="text-lg text-neutral-300 mt-4">
                   When I'm not coding, you can find me exploring new technologies, contributing to open-source projects,
                   and staying up-to-date with the latest industry trends.
                 </p>
 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
                   <div className="space-y-1">
-                    <div className="text-sm text-zinc-500">Name</div>
+                    <div className="text-sm text-neutral-500">Name</div>
                     <div className="font-medium">Shine Kyaw Kyaw Aung</div>
                   </div>
                   <div className="space-y-1">
-                    <div className="text-sm text-zinc-500">Email</div>
+                    <div className="text-sm text-neutral-500">Email</div>
                     <div className="font-medium">hello@example.com</div>
                   </div>
                   <div className="space-y-1">
-                    <div className="text-sm text-zinc-500">Location</div>
+                    <div className="text-sm text-neutral-500">Location</div>
                     <div className="font-medium">Myanmar</div>
                   </div>
                   <div className="space-y-1">
-                    <div className="text-sm text-zinc-500">Experience</div>
+                    <div className="text-sm text-neutral-500">Experience</div>
                     <div className="font-medium">5+ Years</div>
                   </div>
                 </div>
 
                 <div className="mt-8">
-                  <Button className="bg-zinc-800 hover:bg-zinc-700 text-white">Download Resume</Button>
+                  <Button className="bg-brand-600 hover:bg-brand-700 text-white shadow-lg shadow-brand-500/25">
+                    Download Resume
+                  </Button>
                 </div>
               </GlassmorphicCard>
             </div>
@@ -464,8 +466,8 @@ export default function Portfolio() {
       {/* Skills Section */}
       <section id="skills" className="py-16 relative">
         <div className="absolute inset-0 z-0">
-          <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+          <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-secondary-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-accent-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
         </div>
 
         <div className="container relative z-10">
@@ -491,8 +493,8 @@ export default function Portfolio() {
       {/* Courses and Videos Section */}
       <section id="courses" className="py-16 relative">
         <div className="absolute inset-0 z-0">
-          <div className="absolute top-1/4 right-1/3 w-64 h-64 bg-green-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
-          <div className="absolute bottom-1/3 left-1/4 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+          <div className="absolute top-1/4 right-1/3 w-64 h-64 bg-accent-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+          <div className="absolute bottom-1/3 left-1/4 w-64 h-64 bg-brand-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
         </div>
 
         <div className="container relative z-10">
@@ -525,29 +527,27 @@ export default function Portfolio() {
       {/* Projects Section */}
       <section id="projects" className="py-16 relative">
         <div className="absolute inset-0 z-0">
-          <div className="absolute top-1/4 left-1/3 w-64 h-64 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
-          <div className="absolute bottom-1/3 right-1/4 w-64 h-64 bg-yellow-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+          <div className="absolute top-1/4 left-1/3 w-64 h-64 bg-tertiary-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+          <div className="absolute bottom-1/3 right-1/4 w-64 h-64 bg-secondary-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
         </div>
 
         <div className="container relative z-10">
           <SectionHeading title="Featured Projects" subtitle="Some of my recent work" />
 
-          <div className="mt-16">
-            <ProjectSlider
-              projects={projectsToShow}
-              currentPage={projectsPage}
-              totalPages={totalProjectsPages}
-              onPageChange={setProjectsPage}
-            />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
+            {projectsToShow.map((project, index) => (
+              <ProjectCard key={index} {...project} />
+            ))}
           </div>
+          <Pagination currentPage={projectsPage} totalPages={totalProjectsPages} onPageChange={setProjectsPage} />
         </div>
       </section>
 
       {/* Blog Section */}
       <section id="blog" className="py-16 relative">
         <div className="absolute inset-0 z-0">
-          <div className="absolute top-1/4 right-1/3 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
-          <div className="absolute bottom-1/3 left-1/4 w-64 h-64 bg-green-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+          <div className="absolute top-1/4 right-1/3 w-64 h-64 bg-accent-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+          <div className="absolute bottom-1/3 left-1/4 w-64 h-64 bg-brand-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
         </div>
 
         <div className="container relative z-10">
@@ -565,8 +565,8 @@ export default function Portfolio() {
       {/* Experience Section */}
       <section id="experience" className="py-16 relative">
         <div className="absolute inset-0 z-0">
-          <div className="absolute top-1/3 right-1/3 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
-          <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+          <div className="absolute top-1/3 right-1/3 w-64 h-64 bg-brand-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+          <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-tertiary-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
         </div>
 
         <div className="container relative z-10">
@@ -581,8 +581,8 @@ export default function Portfolio() {
       {/* Client Reviews Section */}
       <section id="reviews" className="py-16 relative">
         <div className="absolute inset-0 z-0">
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
-          <div className="absolute bottom-1/3 right-1/3 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-secondary-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+          <div className="absolute bottom-1/3 right-1/3 w-64 h-64 bg-accent-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
         </div>
 
         <div className="container relative z-10">
@@ -597,8 +597,8 @@ export default function Portfolio() {
       {/* Contact Section */}
       <section id="contact" className="py-16 relative">
         <div className="absolute inset-0 z-0">
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
-          <div className="absolute bottom-1/3 right-1/3 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-brand-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+          <div className="absolute bottom-1/3 right-1/3 w-64 h-64 bg-tertiary-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
         </div>
 
         <div className="container relative z-10">
@@ -609,38 +609,38 @@ export default function Portfolio() {
               <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center">
-                    <Mail className="h-5 w-5 text-purple-400" />
+                  <div className="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center">
+                    <Mail className="h-5 w-5 text-brand-400" />
                   </div>
                   <div>
-                    <div className="text-sm text-zinc-500">Email</div>
+                    <div className="text-sm text-neutral-500">Email</div>
                     <div className="font-medium">hello@example.com</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center">
-                    <Linkedin className="h-5 w-5 text-purple-400" />
+                  <div className="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center">
+                    <Linkedin className="h-5 w-5 text-brand-400" />
                   </div>
                   <div>
-                    <div className="text-sm text-zinc-500">LinkedIn</div>
+                    <div className="text-sm text-neutral-500">LinkedIn</div>
                     <div className="font-medium">linkedin.com/in/shinekyawkyawaung</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center">
-                    <Github className="h-5 w-5 text-purple-400" />
+                  <div className="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center">
+                    <Github className="h-5 w-5 text-brand-400" />
                   </div>
                   <div>
-                    <div className="text-sm text-zinc-500">GitHub</div>
+                    <div className="text-sm text-neutral-500">GitHub</div>
                     <div className="font-medium">github.com/shinekyawkyawaung</div>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-8 pt-8 border-t border-zinc-800">
+              <div className="mt-8 pt-8 border-t border-neutral-800">
                 <h4 className="text-lg font-medium mb-4">Current Status</h4>
                 <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse"></div>
+                  <div className="w-3 h-3 rounded-full bg-success-500 animate-pulse"></div>
                   <span>Available for freelance work and full-time opportunities</span>
                 </div>
               </div>
@@ -652,14 +652,14 @@ export default function Portfolio() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-zinc-800 py-12">
+      <footer className="border-t border-neutral-800 py-12">
         <div className="container flex flex-col md:flex-row justify-between items-center gap-6">
           <div>
             <Link href="/" className="font-bold text-xl">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">Shine</span>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-brand-400 to-accent-500">Shine</span>
               <span className="text-white">KKA</span>
             </Link>
-            <p className="text-sm text-zinc-500 mt-2">
+            <p className="text-sm text-neutral-500 mt-2">
               © {new Date().getFullYear()} Shine Kyaw Kyaw Aung. All rights reserved.
             </p>
           </div>
@@ -668,7 +668,7 @@ export default function Portfolio() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
+                className="rounded-full bg-neutral-800/50 hover:bg-brand-500/20 hover:border-brand-500/50 text-neutral-400 hover:text-brand-300 transition-all duration-300"
               >
                 <Github className="h-5 w-5" />
                 <span className="sr-only">GitHub</span>
@@ -678,7 +678,7 @@ export default function Portfolio() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
+                className="rounded-full bg-neutral-800/50 hover:bg-brand-500/20 hover:border-brand-500/50 text-neutral-400 hover:text-brand-300 transition-all duration-300"
               >
                 <Linkedin className="h-5 w-5" />
                 <span className="sr-only">LinkedIn</span>
@@ -688,7 +688,7 @@ export default function Portfolio() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
+                className="rounded-full bg-neutral-800/50 hover:bg-brand-500/20 hover:border-brand-500/50 text-neutral-400 hover:text-brand-300 transition-all duration-300"
               >
                 <Twitter className="h-5 w-5" />
                 <span className="sr-only">Twitter</span>
@@ -698,7 +698,7 @@ export default function Portfolio() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
+                className="rounded-full bg-neutral-800/50 hover:bg-brand-500/20 hover:border-brand-500/50 text-neutral-400 hover:text-brand-300 transition-all duration-300"
               >
                 <Mail className="h-5 w-5" />
                 <span className="sr-only">Email</span>

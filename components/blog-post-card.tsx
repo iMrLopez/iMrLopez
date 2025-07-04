@@ -1,6 +1,5 @@
 "use client"
 
-import Image from "next/image"
 import Link from "next/link"
 import { Calendar, Clock } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
@@ -15,21 +14,10 @@ interface BlogPostCardProps {
   tags: string[]
 }
 
-export function BlogPostCard({ id, title, excerpt, image, publishedAt, readTime, tags }: BlogPostCardProps) {
+export function BlogPostCard({ id, title, excerpt, publishedAt, readTime, tags }: BlogPostCardProps) {
   return (
     <Link href={`/blog/${id}`}>
       <article className="group relative overflow-hidden rounded-xl bg-zinc-800/50 backdrop-blur-sm border border-zinc-700/50 hover:border-zinc-600/50 transition-all duration-300 cursor-pointer">
-        {/* Featured Image */}
-        <div className="relative aspect-video overflow-hidden">
-          <Image
-            src={image || "/placeholder.svg"}
-            alt={title}
-            fill
-            className="object-cover transition-transform duration-300 group-hover:scale-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/60 via-transparent to-transparent" />
-        </div>
-
         {/* Content */}
         <div className="p-6">
           <div className="flex items-center gap-4 text-sm text-zinc-400 mb-3">
