@@ -1,7 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { motion } from "framer-motion"
+import { useEffect, useState } from "react"
 
 export function MouseFollower() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
@@ -17,37 +16,26 @@ export function MouseFollower() {
       setIsVisible(false)
     }
 
-    window.addEventListener("mousemove", handleMouseMove)
-    document.body.addEventListener("mouseleave", handleMouseLeave)
+    document.addEventListener("mousemove", handleMouseMove)
+    document.addEventListener("mouseleave", handleMouseLeave)
 
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove)
-      document.body.removeEventListener("mouseleave", handleMouseLeave)
+      document.removeEventListener("mousemove", handleMouseMove)
+      document.removeEventListener("mouseleave", handleMouseLeave)
     }
   }, [])
 
   return (
-    <>
-      <motion.div
-        className="fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none z-50 mix-blend-difference"
-        animate={{
-          x: mousePosition.x - 16,
-          y: mousePosition.y - 16,
-          opacity: isVisible ? 1 : 0,
-        }}
-        transition={{ type: "spring", damping: 20, stiffness: 300, mass: 0.5 }}
-      >
-        <div className="w-full h-full rounded-full bg-white opacity-50"></div>
-      </motion.div>
-
-      <motion.div
-        className="fixed top-0 left-0 w-2 h-2 rounded-full bg-white pointer-events-none z-50"
-        animate={{
-          x: mousePosition.x - 1,
-          y: mousePosition.y - 1,
-          opacity: isVisible ? 1 : 0,
-        }}
-      />
-    </>
+    <div
+      className={`fixed pointer-events-none z-50 transition-opacity duration-300 ${
+        isVisible ? "opacity-100" : "opacity-0"
+      }`}
+      style={{
+        left: mousePosition.x - 10,
+        top: mousePosition.y - 10,
+      }}
+    >
+      <div className="w-5 h-5 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 opacity-50 blur-sm animate-pulse" />
+    </div>
   )
 }

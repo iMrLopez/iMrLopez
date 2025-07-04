@@ -5,7 +5,6 @@ import Link from "next/link"
 import { ArrowRight, Github, Linkedin, Mail, Twitter } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
-import { ProjectCard } from "@/components/project-card"
 import { SkillBadge } from "@/components/skill-badge"
 import { Timeline } from "@/components/timeline"
 import { ContactForm } from "@/components/contact-form"
@@ -21,6 +20,7 @@ import { ClientReviews } from "@/components/client-reviews"
 import { Pagination } from "@/components/pagination"
 import { CodeBackground } from "@/components/code-background"
 import { Avatar } from "@/components/avatar"
+import { ProjectSlider } from "@/components/project-slider"
 
 export default function Portfolio() {
   const [coursesPage, setCoursesPage] = useState(1)
@@ -304,7 +304,7 @@ export default function Portfolio() {
       <FloatingNav />
 
       {/* Hero Section */}
-      <section className="relative py-32 flex items-center justify-center overflow-hidden">
+      <section className="relative py-16 flex items-center justify-center overflow-hidden">
         <CodeBackground />
 
         <div className="absolute inset-0 z-0">
@@ -402,7 +402,7 @@ export default function Portfolio() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-32 relative">
+      <section id="about" className="py-16 relative">
         <div className="absolute inset-0 z-0">
           <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
           <div className="absolute bottom-1/3 left-1/3 w-64 h-64 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
@@ -462,7 +462,7 @@ export default function Portfolio() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-32 relative">
+      <section id="skills" className="py-16 relative">
         <div className="absolute inset-0 z-0">
           <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
           <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
@@ -489,7 +489,7 @@ export default function Portfolio() {
       </section>
 
       {/* Courses and Videos Section */}
-      <section id="courses" className="py-32 relative">
+      <section id="courses" className="py-16 relative">
         <div className="absolute inset-0 z-0">
           <div className="absolute top-1/4 right-1/3 w-64 h-64 bg-green-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
           <div className="absolute bottom-1/3 left-1/4 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
@@ -510,7 +510,7 @@ export default function Portfolio() {
           </div>
 
           {/* Videos */}
-          <div className="mt-20">
+          <div className="mt-12">
             <h3 className="text-2xl font-bold mb-8 text-center">Latest YouTube Videos & Instagram Reels</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {videosToShow.map((video, index) => (
@@ -523,7 +523,7 @@ export default function Portfolio() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-32 relative">
+      <section id="projects" className="py-16 relative">
         <div className="absolute inset-0 z-0">
           <div className="absolute top-1/4 left-1/3 w-64 h-64 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
           <div className="absolute bottom-1/3 right-1/4 w-64 h-64 bg-yellow-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
@@ -532,17 +532,19 @@ export default function Portfolio() {
         <div className="container relative z-10">
           <SectionHeading title="Featured Projects" subtitle="Some of my recent work" />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
-            {projectsToShow.map((project, index) => (
-              <ProjectCard key={index} {...project} />
-            ))}
+          <div className="mt-16">
+            <ProjectSlider
+              projects={projectsToShow}
+              currentPage={projectsPage}
+              totalPages={totalProjectsPages}
+              onPageChange={setProjectsPage}
+            />
           </div>
-          <Pagination currentPage={projectsPage} totalPages={totalProjectsPages} onPageChange={setProjectsPage} />
         </div>
       </section>
 
       {/* Blog Section */}
-      <section id="blog" className="py-32 relative">
+      <section id="blog" className="py-16 relative">
         <div className="absolute inset-0 z-0">
           <div className="absolute top-1/4 right-1/3 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
           <div className="absolute bottom-1/3 left-1/4 w-64 h-64 bg-green-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
@@ -561,7 +563,7 @@ export default function Portfolio() {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-32 relative">
+      <section id="experience" className="py-16 relative">
         <div className="absolute inset-0 z-0">
           <div className="absolute top-1/3 right-1/3 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
           <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
@@ -577,7 +579,7 @@ export default function Portfolio() {
       </section>
 
       {/* Client Reviews Section */}
-      <section id="reviews" className="py-32 relative">
+      <section id="reviews" className="py-16 relative">
         <div className="absolute inset-0 z-0">
           <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
           <div className="absolute bottom-1/3 right-1/3 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
@@ -593,7 +595,7 @@ export default function Portfolio() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-32 relative">
+      <section id="contact" className="py-16 relative">
         <div className="absolute inset-0 z-0">
           <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
           <div className="absolute bottom-1/3 right-1/3 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>

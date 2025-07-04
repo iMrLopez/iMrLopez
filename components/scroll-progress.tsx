@@ -1,20 +1,15 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { motion, useScroll, useSpring } from "framer-motion"
+import { useEffect, useState } from "react"
 
 export function ScrollProgress() {
-  const [isVisible, setIsVisible] = useState(false)
-  const { scrollYProgress } = useScroll()
-  const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30 })
+  const [scrollProgress, setScrollProgress] = useState(0)
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 100) {
-        setIsVisible(true)
-      } else {
-        setIsVisible(false)
-      }
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight
+      const progress = (window.scrollY / totalHeight) * 100
+      setScrollProgress(Math.min(progress, 100))
     }
 
     window.addEventListener("scroll", handleScroll)
@@ -22,10 +17,11 @@ export function ScrollProgress() {
   }, [])
 
   return (
-    <motion.div
-      className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 to-pink-500 origin-left z-50"
-      style={{ scaleX, opacity: isVisible ? 1 : 0 }}
-      transition={{ opacity: { duration: 0.3 } }}
-    />
+    <div className="fixed top-0 left-0 w-full h-1 bg-zinc-800/50 z-50">
+      <div
+        className="h-full bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-150 ease-out"
+        style={{ width: `${scrollProgress}%` }}
+      />
+    </div>
   )
 }
