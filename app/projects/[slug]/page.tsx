@@ -70,6 +70,17 @@ export default async function ProjectPage({ params }: PageProps<"/projects/[slug
               Visit site <ArrowUpRight className="size-4" aria-hidden />
             </a>
           )}
+          {project.links?.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              target="_blank"
+              rel="noopener"
+              className="inline-flex h-9 items-center gap-1.5 rounded-lg border border-line bg-surface px-3.5 text-sm font-medium hover:border-ink-3"
+            >
+              {link.label} <ArrowUpRight className="size-4" aria-hidden />
+            </a>
+          ))}
           {project.repo && (
             <a
               href={project.repo}

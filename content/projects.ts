@@ -69,6 +69,11 @@ export const projects: Project[] = [
     role: "Founder",
     stack: ["React", "Capacitor", "Firebase", "HLS", "i18next"],
     site: "https://orvisapp.web.app",
+    links: [
+      { label: "Google Play · Costa Rica", href: "https://play.google.com/store/apps/details?id=com.orvis.crc" },
+      { label: "Google Play · China", href: "https://play.google.com/store/apps/details?id=com.mlopezitsolutions.chinatv" },
+    ],
+    // Composed from the Google Play store screenshots (not reproducible with `pnpm screenshots`).
     screenshot: "/projects/orvis.jpg",
     featured: true,
     details: [

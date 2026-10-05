@@ -35,6 +35,8 @@ export interface Project {
   site?: string
   /** Only for public repositories. Private repos must not be linked. */
   repo?: string
+  /** Extra links such as app store listings. */
+  links?: Link[]
   /** Path under /public, produced by `pnpm screenshots`. */
   screenshot?: string
   featured?: boolean

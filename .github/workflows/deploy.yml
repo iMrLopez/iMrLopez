@@ -33,6 +33,11 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
 
+      - name: Check README.md matches content/
+        run: |
+          pnpm readme
+          git diff --exit-code README.md || { echo "::error file=README.md::README.md is out of date. Run 'pnpm readme' and commit the result."; exit 1; }
+
       - run: pnpm lint
 
       - run: pnpm typecheck

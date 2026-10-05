@@ -18,6 +18,12 @@ function ProjectLinks({ project }: { project: Project }) {
           <ArrowUpRight className="size-3" aria-hidden />
         </a>
       )}
+      {project.links?.length ? (
+        <a href={project.links[0]!.href} target="_blank" rel="noopener" className="inline-flex items-center hover:text-brand">
+          store
+          <ArrowUpRight className="size-3" aria-hidden />
+        </a>
+      ) : null}
       {project.repo && (
         <a href={project.repo} target="_blank" rel="noopener" className="inline-flex items-center hover:text-brand">
           code
