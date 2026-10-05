@@ -12,7 +12,7 @@
     "build": "next build",
     "start": "npx serve dist",
     "lint": "eslint .",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "next typegen && tsc --noEmit",
     "check": "pnpm typecheck && pnpm lint",
     "screenshots": "tsx scripts/screenshots.ts",
     "readme": "tsx scripts/readme.ts"
