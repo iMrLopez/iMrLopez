@@ -1,279 +1,60 @@
-"use client"
-
+import type { Metadata } from "next"
 import Link from "next/link"
-import {
-  Mail,
-  MapPin,
-  Globe,
-  Github,
-  Linkedin,
-  Youtube,
-  Instagram,
-  MessageCircle,
-  Share2,
-  Briefcase,
-} from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Avatar } from "@/components/avatar"
-import { Badge } from "@/components/ui/badge"
-import { CodeBackground } from "@/components/code-background"
 
-export default function VCard() {
-  const handleShare = async () => {
-    if (navigator.share) {
-      try {
-        await navigator.share({
-          title: "Marny Lopez - Software Engineer",
-          text: "Check out my digital business card",
-          url: window.location.href,
-        })
-      } catch (error) {
-        console.log("Error sharing:", error)
-      }
-    } else {
-      // Fallback: copy to clipboard
-      navigator.clipboard.writeText(window.location.href)
-      alert("Link copied to clipboard!")
-    }
-  }
+import { ThemeToggle } from "@/components/theme-toggle"
+import { profile } from "@/content/profile"
+import { ContactDetails } from "./contact-details"
 
-  const skills = [
-    "JavaScript",
-    "TypeScript",
-    "React",
-    "React Native",
-    "Next.js",
-    "Node.js",
-    "NestJS",
-    "Django",
-    "FastAPI",
-    "PostgreSQL",
-    "Firebase",
-    "GraphQL",
-    "Tailwind CSS",
-    "Python",
-    "Git",
-    "AWS",
-    "Docker",
-  ]
+// Shared in person (QR code); kept out of search results.
+export const metadata: Metadata = {
+  title: "Card",
+  robots: { index: false, follow: false, nocache: true },
+}
 
-  const servicesAndExperience = [
-    "10+ Years in Software Development",
-    "Full-Stack Web Development",
-    "Mobile App Development",
-    "SaaS Application Development",
-    "API Development & Integration",
-    "Database Design & Optimization",
-    "Cloud Infrastructure Setup",
-    "Technical Consulting",
-    "Code Review & Optimization",
-    "Cross-Platform Development Expert",
-    "AI Integration Specialist",
-    "Senior Full Stack Engineer",
-  ]
+const profiles = [
+  { label: "linkedin", href: profile.linkedin },
+  { label: "github", href: profile.github },
+  { label: "youtube", href: profile.youtube },
+  { label: "instagram", href: profile.instagram },
+]
 
+export default function CardPage() {
   return (
-    <div className="h-screen bg-gradient-to-b from-neutral-900 via-neutral-900 to-black text-white flex items-center justify-center p-3 relative overflow-hidden">
-      {/* Code Background Animation */}
-      <CodeBackground />
-
-      {/* Background Effects */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-brand-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-        <div className="absolute top-40 right-10 w-72 h-72 bg-accent-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-        <div className="absolute bottom-20 left-1/3 w-72 h-72 bg-secondary-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
-      </div>
-
-      {/* VCard */}
-      <div className="relative z-10 w-full max-w-2xl h-full max-h-[95vh] overflow-y-auto">
-        <div className="bg-zinc-800/50 backdrop-blur-sm border border-zinc-700/50 rounded-2xl p-4 shadow-2xl h-full flex flex-col">
-          {/* Header */}
-          <div className="text-center mb-4 flex-shrink-0">
-            <div className="flex justify-center mb-3">
-              <Avatar src="/placeholder.svg?height=80&width=80" alt="Marny Lopez" size={80} />
-            </div>
-
-            <h1 className="text-2xl font-bold mb-1">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-purple-600">
-                Marny Lopez
-              </span>
-            </h1>
-
-            <p className="text-base text-zinc-300 mb-1">Senior Full Stack Engineer</p>
-            <p className="text-xs text-zinc-400">Founder & CEO at MyndsIT</p>
-
-            <div className="flex items-center justify-center gap-2 mt-2">
-              <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-              <span className="text-xs font-medium text-green-400">Available for work</span>
-            </div>
+    <main className="grid min-h-dvh place-items-center px-4 py-8">
+      <div className="w-full max-w-sm rounded-2xl border border-line bg-bg/90 p-6 backdrop-blur-sm">
+        <div className="flex items-start justify-between">
+          <div className="grid size-16 place-items-center rounded-xl border border-line bg-surface text-xl font-semibold tracking-tighter text-brand">
+            ML
           </div>
-
-          {/* Contact Information */}
-          <div className="mb-4 flex-shrink-0">
-            <h3 className="text-sm font-semibold text-white mb-2 flex items-center gap-2">
-              <Mail className="h-4 w-4 text-purple-400" />
-              Contact Information
-            </h3>
-
-            <div className="grid grid-cols-2 gap-2">
-              <Link
-                href="mailto:me@marnylopez.com"
-                className="flex items-center gap-2 p-2 rounded-lg bg-zinc-700/30 hover:bg-zinc-700/50 transition-colors group"
-              >
-                <Mail className="h-3 w-3 text-purple-400 flex-shrink-0" />
-                <div className="min-w-0">
-                  <div className="text-xs text-zinc-500">Email</div>
-                  <div className="text-xs font-medium truncate">me@marnylopez.com</div>
-                </div>
-              </Link>
-
-              <Link
-                href="https://wa.me/50660453526"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 p-2 rounded-lg bg-zinc-700/30 hover:bg-zinc-700/50 transition-colors group"
-              >
-                <MessageCircle className="h-3 w-3 text-green-400 flex-shrink-0" />
-                <div className="min-w-0">
-                  <div className="text-xs text-zinc-500">WhatsApp</div>
-                  <div className="text-xs font-medium truncate">+506 6045 3526</div>
-                </div>
-              </Link>
-
-              <div className="flex items-center gap-2 p-2 rounded-lg bg-zinc-700/30">
-                <MapPin className="h-3 w-3 text-purple-400 flex-shrink-0" />
-                <div className="min-w-0">
-                  <div className="text-xs text-zinc-500">Location</div>
-                  <div className="text-xs font-medium">San José, Costa Rica</div>
-                </div>
-              </div>
-
-              <Link
-                href="https://marnylopez.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 p-2 rounded-lg bg-zinc-700/30 hover:bg-zinc-700/50 transition-colors group"
-              >
-                <Globe className="h-3 w-3 text-purple-400 flex-shrink-0" />
-                <div className="min-w-0">
-                  <div className="text-xs text-zinc-500">Website</div>
-                  <div className="text-xs font-medium truncate">marnylopez.com</div>
-                </div>
-              </Link>
-            </div>
-          </div>
-
-          {/* Social Media */}
-          <div className="mb-4 flex-shrink-0">
-            <h3 className="text-sm font-semibold text-white mb-2">Social Media</h3>
-            <div className="grid grid-cols-4 gap-2">
-              <Link
-                href="https://github.com/iMrLopez"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center gap-1 p-2 rounded-lg bg-zinc-700/30 hover:bg-zinc-700/50 transition-colors group"
-              >
-                <Github className="h-4 w-4 text-purple-400" />
-                <span className="text-xs">GitHub</span>
-              </Link>
-
-              <Link
-                href="https://www.linkedin.com/in/marnylopez/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center gap-1 p-2 rounded-lg bg-zinc-700/30 hover:bg-zinc-700/50 transition-colors group"
-              >
-                <Linkedin className="h-4 w-4 text-purple-400" />
-                <span className="text-xs">LinkedIn</span>
-              </Link>
-
-              <Link
-                href="https://youtube.com/@iMrLopez"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center gap-1 p-2 rounded-lg bg-zinc-700/30 hover:bg-zinc-700/50 transition-colors group"
-              >
-                <Youtube className="h-4 w-4 text-purple-400" />
-                <span className="text-xs">YouTube</span>
-              </Link>
-
-              <Link
-                href="https://instagram.com/iimrlopez"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center gap-1 p-2 rounded-lg bg-zinc-700/30 hover:bg-zinc-700/50 transition-colors group"
-              >
-                <Instagram className="h-4 w-4 text-purple-400" />
-                <span className="text-xs">Instagram</span>
-              </Link>
-            </div>
-          </div>
-
-          {/* Skills */}
-          <div className="mb-4 flex-shrink-0">
-            <h3 className="text-sm font-semibold text-white mb-2">Technical Skills</h3>
-            <div className="flex flex-wrap gap-1">
-              {skills.map((skill, index) => (
-                <Badge
-                  key={index}
-                  variant="secondary"
-                  className="bg-zinc-700/50 text-zinc-300 hover:bg-purple-500/20 hover:text-purple-300 transition-colors text-xs px-2 py-0.5"
-                >
-                  {skill}
-                </Badge>
-              ))}
-            </div>
-          </div>
-
-          {/* Services & Experience */}
-          <div className="mb-4 flex-1 min-h-0">
-            <h3 className="text-sm font-semibold text-white mb-2">Services & Experience</h3>
-            <div className="grid grid-cols-2 gap-x-3 gap-y-1">
-              {servicesAndExperience.map((item, index) => (
-                <div key={index} className="flex items-center gap-2 text-xs text-zinc-300">
-                  <div className="w-1 h-1 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex-shrink-0"></div>
-                  <span className="truncate">{item}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Action Buttons */}
-          <div className="space-y-2 pt-3 border-t border-zinc-700/50 flex-shrink-0">
-            <Link href="/#contact">
-              <Button className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white shadow-lg shadow-purple-500/25 h-8 text-sm">
-                Contact Me
-              </Button>
-            </Link>
-
-            <div className="grid grid-cols-2 gap-2">
-              <Link href="/#projects">
-                <Button
-                  variant="outline"
-                  className="w-full border-zinc-600 text-zinc-300 hover:text-white hover:border-purple-500 hover:bg-purple-500/10 bg-transparent h-8 text-sm"
-                >
-                  <Briefcase className="h-3 w-3 mr-1" />
-                  Projects
-                </Button>
-              </Link>
-
-              <Button
-                onClick={handleShare}
-                variant="outline"
-                className="w-full border-zinc-600 text-zinc-300 hover:text-white hover:border-purple-500 hover:bg-purple-500/10 bg-transparent h-8 text-sm"
-              >
-                <Share2 className="h-3 w-3 mr-1" />
-                Share
-              </Button>
-            </div>
-          </div>
-
-          {/* Footer */}
-          <div className="text-center mt-3 pt-3 border-t border-zinc-700/50 flex-shrink-0">
-            <p className="text-xs text-zinc-500">Specializing in robust, scalable applications across the stack</p>
-          </div>
+          <ThemeToggle />
         </div>
+
+        <h1 className="mt-5 text-2xl font-semibold tracking-tight">{profile.name}</h1>
+        <p className="text-ink-2">{profile.headline}</p>
+        <p className="mono-label mt-2 text-ink-3">{profile.location}</p>
+        {profile.availableForWork && (
+          <p className="mono-label mt-3 inline-flex items-center gap-2 text-ink-2">
+            <span className="size-1.5 rounded-full bg-signal ring-4 ring-signal/20" aria-hidden />
+            available for new work
+          </p>
+        )}
+
+        <div className="mt-6">
+          <ContactDetails />
+        </div>
+
+        <nav aria-label="Profiles" className="mono-label mt-6 flex flex-wrap justify-center gap-x-5 gap-y-2 border-t border-line pt-5 text-ink-2">
+          {profiles.map((p) => (
+            <a key={p.label} href={p.href} target="_blank" rel="noopener" className="hover:text-brand">
+              {p.label}
+            </a>
+          ))}
+        </nav>
+
+        <Link href="/" className="mono-label mt-5 block text-center text-ink-3 hover:text-ink">
+          marnylopez.com →
+        </Link>
       </div>
-    </div>
+    </main>
   )
 }

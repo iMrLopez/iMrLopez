@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Marny Lopez — design prototype</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #fafaf9; --surface: #ffffff; --ink: #18181b; --ink-2: #52525b; --ink-3: #a1a1aa;
+    --line: #e7e5e4; --grid: rgba(24,24,27,.06);
+    --brand: #3e40ed; --brand-soft: rgba(62,64,237,.08); --signal: #ea580c;
+  }
+  :root[data-theme="dark"] {
+    --bg: #0c0c0e; --surface: #131316; --ink: #f4f4f5; --ink-2: #a1a1aa; --ink-3: #52525b;
+    --line: #232328; --grid: rgba(255,255,255,.035);
+    --brand: #7b90fe; --brand-soft: rgba(123,144,254,.10); --signal: #fb923c;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    background: var(--bg); color: var(--ink); font: 400 16px/1.65 "Geist", system-ui, sans-serif;
+    background-image: radial-gradient(var(--grid) 1px, transparent 1px); background-size: 24px 24px;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  .mono { font-family: "Geist Mono", ui-monospace, monospace; font-size: 13px; letter-spacing: -.01em; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+  nav { position: sticky; top: 0; z-index: 5; backdrop-filter: saturate(1.4) blur(10px); background: color-mix(in srgb, var(--bg) 80%, transparent); border-bottom: 1px solid var(--line); }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 56px; }
+  nav .links { display: flex; gap: 22px; color: var(--ink-2); }
+  nav .links a:hover { color: var(--ink); }
+  .mark { font-weight: 600; letter-spacing: -.02em; }
+  .mark span { color: var(--brand); }
+  button.theme { background: none; border: 1px solid var(--line); color: var(--ink-2); border-radius: 6px; padding: 4px 9px; cursor: pointer; }
+
+  section { padding: 88px 0 0; }
+  .label { display: flex; align-items: center; gap: 12px; color: var(--ink-3); margin-bottom: 28px; }
+  .label b { color: var(--brand); font-weight: 500; }
+  .label::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
+  .hero { padding-top: 96px; display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: start; }
+  .hero h1 { font-size: clamp(40px, 7vw, 64px); line-height: 1.02; letter-spacing: -.045em; font-weight: 600; }
+  .hero .role { font-size: 20px; color: var(--ink-2); margin-top: 14px; letter-spacing: -.01em; }
+  .hero p.lede { margin-top: 22px; max-width: 560px; color: var(--ink-2); }
+  .meta { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 26px; color: var(--ink-3); }
+  .status { display: inline-flex; align-items: center; gap: 8px; color: var(--ink-2); }
+  .status i { width: 7px; height: 7px; border-radius: 50%; background: var(--signal); box-shadow: 0 0 0 4px color-mix(in srgb, var(--signal) 18%, transparent); }
+  .avatar { width: 112px; height: 112px; border-radius: 14px; border: 1px solid var(--line); background: var(--surface); display: grid; place-items: center; color: var(--ink-3); position: relative; }
+  .avatar::before { content: ""; position: absolute; inset: -6px; border: 1px dashed var(--line); border-radius: 18px; }
+  .cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; height: 38px; padding: 0 16px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); font-size: 14px; font-weight: 500; transition: border-color .15s; }
+  .btn:hover { border-color: var(--ink-3); }
+  .btn.primary { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+
+  .work { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; }
+  .card { border: 1px solid var(--line); border-radius: 12px; background: var(--surface); overflow: hidden; transition: border-color .15s, transform .15s; }
+  .card:hover { border-color: var(--ink-3); transform: translateY(-2px); }
+  .shot { aspect-ratio: 16/10; border-bottom: 1px solid var(--line); background: var(--brand-soft); position: relative; }
+  .shot .chrome { position: absolute; inset: 0 0 auto; height: 26px; display: flex; gap: 6px; align-items: center; padding: 0 10px; border-bottom: 1px solid var(--line); background: var(--surface); }
+  .shot .chrome i { width: 8px; height: 8px; border-radius: 50%; background: var(--line); }
+  .shot .chrome .url { margin-left: 8px; color: var(--ink-3); font-size: 11px; }
+  .shot .ph { position: absolute; inset: 26px 0 0; display: grid; place-items: center; color: var(--ink-3); }
+  .card .body { padding: 16px 18px 18px; }
+  .card h3 { font-size: 17px; font-weight: 600; letter-spacing: -.015em; display: flex; justify-content: space-between; }
+  .card h3 small { color: var(--ink-3); font-weight: 400; }
+  .card p { color: var(--ink-2); font-size: 14.5px; margin-top: 6px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+  .tags span { color: var(--ink-2); border: 1px solid var(--line); border-radius: 5px; padding: 1px 7px; font-size: 12px; }
+  .private { color: var(--ink-3); }
+
+  .log { border-top: 1px solid var(--line); }
+  .row { display: grid; grid-template-columns: 116px 120px 1fr auto; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
+  .row .hash { color: var(--brand); }
+  .row .when { color: var(--ink-3); }
+  .row .what b { font-weight: 500; }
+  .row .what div { color: var(--ink-2); font-size: 14.5px; }
+  .row .where { color: var(--ink-3); }
+  .row.now .hash::after { content: " HEAD"; color: var(--signal); }
+
+  .res { display: grid; gap: 0; border-top: 1px solid var(--line); }
+  .res a { display: grid; grid-template-columns: 80px 1fr auto; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
+  .res a:hover .t { color: var(--brand); }
+  .res .kind { color: var(--ink-3); }
+  .res .t { font-weight: 500; transition: color .15s; }
+  .res .d { color: var(--ink-3); }
+
+  footer { margin: 120px 0 0; padding: 48px 0 64px; border-top: 1px solid var(--line); }
+  footer h2 { font-size: clamp(28px, 5vw, 40px); letter-spacing: -.035em; font-weight: 600; line-height: 1.1; }
+  footer h2 span { color: var(--ink-3); }
+  footer .bottom { display: flex; justify-content: space-between; margin-top: 48px; color: var(--ink-3); }
+
+  @media (max-width: 720px) {
+    .hero { grid-template-columns: 1fr; } .avatar { order: -1; width: 88px; height: 88px; }
+    .work { grid-template-columns: 1fr; } nav .links { display: none; }
+    .row { grid-template-columns: 1fr; gap: 2px; } .res a { grid-template-columns: 1fr; gap: 2px; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="mark" href="#">marny<span>.</span>lopez</a>
+  <div class="links mono"><a href="#work">work</a><a href="#experience">experience</a><a href="#resources">resources</a><a href="#contact">contact</a></div>
+  <button class="theme mono" onclick="const r=document.documentElement;r.dataset.theme=r.dataset.theme==='dark'?'light':'dark'">◐ theme</button>
+</div></nav>
+
+<main class="wrap">
+  <header class="hero">
+    <div>
+      <div class="status mono"><i></i>available for new work</div>
+      <h1 style="margin-top:18px">Marny Lopez</h1>
+      <div class="role">Senior software engineer · Founder of MyndsIT</div>
+      <p class="lede">I build web and mobile products end to end, from React Native apps to Django and NestJS backends, and lately a lot of applied AI. Thirteen years shipping for Cisco, DrChrono, Tone, and the American Kennel Club, plus my own products.</p>
+      <div class="meta mono"><span>San José, CR</span><span>UTC−6</span><span>ES / EN</span><span>13 yrs</span></div>
+      <div class="cta">
+        <a class="btn primary" href="#">Connect on LinkedIn ↗</a>
+        <a class="btn" href="#">Book a call ↗</a>
+        <a class="btn" href="#">Résumé (PDF)</a>
+        <a class="btn mono" href="#">GitHub</a><a class="btn mono" href="#">LinkedIn</a>
+      </div>
+    </div>
+    <div class="avatar mono">photo</div>
+  </header>
+
+  <section id="work">
+    <div class="label mono"><b>01</b> selected work</div>
+    <div class="work">
+      <a class="card" href="#"><div class="shot"><div class="chrome"><i></i><i></i><i></i><span class="url mono">travelix.app</span></div><div class="ph mono">screenshot</div></div>
+        <div class="body"><h3>Travelix <small class="mono">2024 →</small></h3><p>Trip expense tracker and AI travel planner for groups.</p><div class="tags mono"><span>Flutter</span><span>TypeScript</span><span>Firebase</span><span>LLM</span></div></div></a>
+      <a class="card" href="#"><div class="shot"><div class="chrome"><i></i><i></i><i></i><span class="url mono">gorentivo.com</span></div><div class="ph mono">screenshot</div></div>
+        <div class="body"><h3>Rentivo <small class="mono">2026</small></h3><p>Rental platform with RFID-tracked inventory.</p><div class="tags mono"><span>Next.js</span><span>TypeScript</span><span>RFID</span></div></div></a>
+      <a class="card" href="#"><div class="shot"><div class="chrome"><i></i><i></i><i></i><span class="url mono">imrlopez.github.io/mangAI</span></div><div class="ph mono">screenshot</div></div>
+        <div class="body"><h3>mangAI <small class="mono">2025</small></h3><p>Turns manga pages into multi-voice audio stories.</p><div class="tags mono"><span>Python</span><span>GPT-4 Vision</span><span>ElevenLabs</span></div></div></a>
+      <div class="card"><div class="shot"><div class="chrome"><i></i><i></i><i></i><span class="url mono">private</span></div><div class="ph mono">screenshot</div></div>
+        <div class="body"><h3>Orvis CR <small class="mono">2024 →</small></h3><p>Mobile and TV apps for Orvis Costa Rica.</p><div class="tags mono"><span>Flutter</span><span>TypeScript</span><span class="private">private repo</span></div></div></div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="label mono"><b>02</b> experience</div>
+    <div class="log">
+      <div class="row now"><span class="hash mono">c1sc0</span><span class="when mono">2024 → now</span><div class="what"><b>Senior software engineer, team lead</b><div>AI-assisted internal tooling for lifecycle and security compliance.</div></div><span class="where mono">Cisco</span></div>
+      <div class="row now"><span class="hash mono">a7f2e1</span><span class="when mono">2014 → now</span><div class="what"><b>Founder, software engineer</b><div>Client work and own products across web and mobile.</div></div><span class="where mono">MyndsIT</span></div>
+      <div class="row"><span class="hash mono">d4c8b0</span><span class="when mono">2024 → 2026</span><div class="what"><b>Senior software engineer</b><div>Payments team for DrChrono and onpatient. Django, React Native.</div></div><span class="where mono">DrChrono</span></div>
+      <div class="row"><span class="hash mono">70e9a3</span><span class="when mono">2022 → 2024</span><div class="what"><b>Senior software development engineer</b><div>Royalties platform: Wise payouts, notifications, 90% test coverage.</div></div><span class="where mono">Tone</span></div>
+      <div class="row"><span class="hash mono">…</span><span class="when mono">2013 → 2022</span><div class="what"><b>Riparian · AKC · Stream Energy · DXC · Fiserv</b><div>Show 5 earlier roles</div></div><span class="where mono">↓</span></div>
+    </div>
+  </section>
+
+  <section id="resources">
+    <div class="label mono"><b>03</b> writing and videos</div>
+    <div class="res">
+      <a href="#"><span class="kind mono">video</span><span class="t">Video title from the YouTube channel</span><span class="d mono">2024 ↗</span></a>
+      <a href="#"><span class="kind mono">course</span><span class="t">Curso profesional de JavaScript, de cero a experto</span><span class="d mono">2022 ↗</span></a>
+      <a href="#"><span class="kind mono">paper</span><span class="t">Análisis de las tecnologías de desarrollo cross-platform</span><span class="d mono">2020 ↗</span></a>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <h2>Have something to build?<br /><span>Message me on LinkedIn ↗</span></h2>
+    <div class="bottom mono"><span>© 2026 Marny Lopez</span><span>built with next.js · hosted on github pages</span></div>
+  </footer>
+</main>
+</body>
+</html>
