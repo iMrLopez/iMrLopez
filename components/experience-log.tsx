@@ -1,5 +1,7 @@
+import Link from "next/link"
 import { ChevronDown } from "lucide-react"
 
+import { projectsWithPages } from "@/content/projects"
 import type { Role } from "@/content/types"
 import { formatRange, shortHash } from "@/lib/format"
 import { Tags } from "./tags"
@@ -26,6 +28,19 @@ function LogEntry({ role }: { role: Role }) {
             <li key={h}>{h}</li>
           ))}
         </ul>
+        {role.projects && (
+          <p className="mono-label mt-3 text-ink-3">
+            built:{" "}
+            {role.projects.map((slug, i) => (
+              <span key={slug}>
+                {i > 0 && ", "}
+                <Link href={`/projects/${slug}/`} className="text-ink hover:text-brand">
+                  {projectsWithPages.find((p) => p.slug === slug)?.name ?? slug}
+                </Link>
+              </span>
+            ))}
+          </p>
+        )}
         <div className="mt-3">
           <Tags items={role.stack} />
         </div>

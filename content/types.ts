@@ -17,6 +17,8 @@ export interface Role {
   summary: string
   highlights: string[]
   stack: string[]
+  /** Slugs of projects built in this role, linked from the experience log. */
+  projects?: string[]
 }
 
 export interface Project {

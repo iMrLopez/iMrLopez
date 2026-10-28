@@ -4,15 +4,19 @@ import type { Role } from "./types"
 export const experience: Role[] = [
   {
     company: "Cisco",
-    title: "Senior Software Engineer, Team Lead",
+    title: "Security Compliance Software Engineer Lead",
     location: "San José, Costa Rica",
     start: "2024-01",
-    summary: "Internal tools that keep departments on track with software lifecycle and security compliance.",
+    summary: "Lead security compliance under Cisco's Secure Development Lifecycle (CSDL) for an organization of about 140 people across 18 teams.",
     highlights: [
-      "Ship features for new and existing internal tools using AI-assisted development with Claude, Cursor, and Copilot.",
-      "Trained models on internal knowledge so teams can query it directly.",
+      "Created the security and compliance management process where there was none, and standardized the tools teams use to report and respond to vulnerabilities.",
+      "Audit security vulnerabilities and coordinate fixes across teams until they ship.",
+      "Built SHIELD, the reporting platform management and teams use to act on vulnerabilities and compliance gaps.",
+      "Every team now tracks its security compliance areas; open vulnerabilities dropped sharply and measured code quality went up.",
+      "Use AI-assisted development with Claude, Cursor, and Copilot, and trained models on internal knowledge so teams can query it directly.",
     ],
-    stack: ["Claude", "Cursor", "Copilot", "LLMs"],
+    stack: ["CSDL", "NestJS", "Node.js", "React", "TypeScript", "PostgreSQL", "Redis", "Claude"],
+    projects: ["shield"],
   },
   {
     company: "MyndsIT",

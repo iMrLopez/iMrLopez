@@ -12,7 +12,7 @@ I build web and mobile products end to end, from React Native apps to Django and
 
 ### Currently
 
-- Senior Software Engineer, Team Lead at **Cisco** (2024 → now)
+- Security Compliance Software Engineer Lead at **Cisco** (2024 → now)
 - Founder, Software Engineer at **MyndsIT** (2014 → now)
 
 ### Selected work
@@ -22,6 +22,7 @@ I build web and mobile products end to end, from React Native apps to Django and
 | [Travelix](https://www.marnylopez.com/projects/travelix/) | Collaborative trip planning and expense tracking for friend groups. | React · Capacitor · Firebase · TypeScript | 2023 → now |
 | [Rentivo](https://www.marnylopez.com/projects/rentivo/) | Property management for landlords: tenants, leases, buildings, payments, and notifications in one dashboard. | Expo · React Native · Supabase · Next.js | 2026 → now |
 | [Mobifactura](https://www.marnylopez.com/projects/mobifactura/) | Electronic invoicing SaaS for Costa Rica, compliant with Ministerio de Hacienda v4.4. | React · TanStack Router · Tailwind · Firebase | 2019 → now |
+| [SHIELD](https://www.marnylopez.com/projects/shield/) | Security compliance reporting platform for an organization of about 140 people across 18 teams at Cisco. | NestJS · Node.js · React · TypeScript | 2024 → now |
 | [Orvis](https://www.marnylopez.com/projects/orvis/) | Free TV and radio streaming apps for Costa Rica and China. | React · Capacitor · Firebase · HLS | 2020 → now |
 | [mangAI](https://www.marnylopez.com/projects/mangai/) | Turns English manga pages into audio stories with separate narrator and character voices. | Python · GPT-4 Vision · OpenAI · ElevenLabs | 2025 |
 | [WattsUp](https://www.marnylopez.com/projects/wattsup/) | Estimates how much charging an electric vehicle adds to your electricity bill. | Python · FastAPI · Prolog · Next.js | 2025 |

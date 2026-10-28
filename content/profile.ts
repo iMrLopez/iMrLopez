@@ -5,7 +5,7 @@ export const profile = {
   lede: "I build web and mobile products end to end, from React Native apps to Django and NestJS backends, and lately a lot of applied AI. Thirteen years shipping for Cisco, DrChrono, Tone, and the American Kennel Club, plus products of my own.",
   location: "San José, Costa Rica",
   timezone: "UTC−6",
-  languages: ["Spanish (native)", "English (professional)"],
+  languages: ["Spanish (native)", "English (bilingual)"],
   careerStart: 2013,
   availableForWork: true,
   site: "https://www.marnylopez.com",

@@ -60,6 +60,22 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "shield",
+    name: "SHIELD",
+    summary: "Security compliance reporting platform for an organization of about 140 people across 18 teams at Cisco.",
+    start: 2024,
+    ongoing: true,
+    org: "Cisco",
+    role: "Security Compliance Software Engineer Lead",
+    stack: ["NestJS", "Node.js", "React", "TypeScript", "PostgreSQL", "Redis"],
+    featured: true,
+    details: [
+      "SHIELD is the reporting platform behind the security compliance process I set up under Cisco's Secure Development Lifecycle. It pulls vulnerability and compliance data from multiple internal sources into one place and generates the reports management and teams act on.",
+      "A NestJS API serves a React and TypeScript front end, and a separate Node.js worker schedules and runs the data fetching, calculations, and report generation so heavy jobs never block the API. PostgreSQL stores the data, and Redis caches requests between the API and the database to reduce load on it.",
+      "Since it rolled out, every team tracks its security compliance areas, open vulnerabilities have dropped sharply, and code quality, one of the areas it measures, has gone up.",
+    ],
+  },
+  {
     slug: "orvis",
     name: "Orvis",
     summary: "Free TV and radio streaming apps for Costa Rica and China.",
