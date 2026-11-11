@@ -4,7 +4,7 @@
 
 **Senior software engineer · Founder of MyndsIT** · San José, Costa Rica
 
-I build web and mobile products end to end, from React Native apps to Django and NestJS backends, and lately a lot of applied AI. Thirteen years shipping for Cisco, DrChrono, Tone, and the American Kennel Club, plus products of my own.
+Senior software engineer with 13 years shipping web and mobile products end to end, from React Native apps to Django and NestJS backends, and lately a lot of applied AI. I lead security compliance for about 140 people across 18 teams at Cisco, where I built SHIELD, our vulnerability and compliance reporting platform. I've also shipped payment systems at DrChrono and Tone, and I run MyndsIT, my studio for client work and my own SaaS products (Rentivo, Mobifactura, Travelix, Orvis).
 
 [marnylopez.com](https://www.marnylopez.com) · [LinkedIn](https://www.linkedin.com/in/marnylopez/) · [YouTube](https://www.youtube.com/@iMrLopez)
 

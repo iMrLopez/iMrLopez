@@ -28,7 +28,7 @@ function Hero() {
         )}
         <h1 className="mt-5 text-5xl font-semibold tracking-[-0.045em] sm:text-6xl">{profile.name}</h1>
         <p className="mt-4 text-xl tracking-tight text-ink-2">{profile.headline}</p>
-        <p className="mt-6 max-w-xl leading-relaxed text-ink-2">{profile.lede}</p>
+        <p className="mt-6 max-w-xl leading-relaxed text-ink-2">{profile.bio}</p>
         <p className="mono-label mt-6 flex flex-wrap gap-x-5 gap-y-1 text-ink-3">
           <span>{profile.location}</span>
           <span>{profile.timezone}</span>
